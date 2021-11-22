@@ -1,0 +1,86 @@
+.login-wrapper {
+    padding: 10px;
+}
+
+.back-link {
+    float: left;
+    width: 100%;
+    margin: 10px;
+}
+
+.container-center {
+    max-width: 400px;
+    margin: 10% auto 0;
+    padding: 20px;
+}
+
+.container-center.lg {
+    max-width: 800px;
+}
+
+.view-header {
+    margin: 10px 0;
+}
+
+.view-header .header-icon {
+    font-size: 60px;
+    color: #37a000;
+    width: 68px;
+    float: left;
+    margin-top: -8px;
+    line-height: 0;
+}
+
+.view-header .header-title {
+    margin-left: 68px;
+}
+
+.view-header .header-title h3 {
+    margin-bottom: 2px;
+}
+
+
+blink {
+    -webkit-animation: 2s linear infinite condemned_blink_effect;
+    animation: 2s linear infinite condemned_blink_effect;
+}
+@-webkit-keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+@keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+.bg-warning {
+    background-color: #d6a615;
+}
+.update-btn {
+    display: inline-block;
+    padding: 6px 12px !important;
+    border-radius: 2px;
+    margin: 4px 2px;
+}
+.update-btn:hover {
+    color: #fff;
+    background: #ef5b5b !important;
+}
+.count-number {
+    font-size: 18px !important;
+    font-weight: 600;
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif !important;
+}

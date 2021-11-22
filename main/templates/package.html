@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
+{% load djmoney %}
+
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- /.End of loader wrapper-->
+   {% include 'includes/_navbars.html' %}
+<!-- DEBUG-VIEW ENDED 2 APPPATH/Config/../Views/themes/website_template/header.php -->
+<!-- DEBUG-VIEW START 3 APPPATH/Config/../Views/themes/website_template/layout.php -->
+<!-- DEBUG-VIEW START 1 APPPATH/Config/../Views/themes/website_template/lending.php -->
+        <div class="page_header" data-parallax-bg-image="{% static 'public/uploads/9c8b7f2ec430989768bedefde172e5ad.jpg' %}" data-parallax-direction="">
+            <div class="header-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="haeder-text">
+                                <h1>Pricing Plans</h1>
+                                <p>Choose from our plans and start earning...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--  /.End of page header -->
+        {% include 'includes/_plan.html' %}
+        {% include 'includes/_footer.html' %}
+        <!-- /.End of pricing -->
+<!-- DEBUG-VIEW ENDED 1 APPPATH/Config/../Views/themes/website_template/lending.php -->
+
+<!-- DEBUG-VIEW ENDED 3 APPPATH/Config/../Views/themes/website_template/layout.php -->
+<!-- DEBUG-VIEW START 4 APPPATH/Config/../Views/themes/website_template/footer.php -->
+
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
+{% include 'includes/_navbars.html' %}
+
+<div class="preloader" id="preloader"
+    style="background: url({% static 'assets/images/1558779995loader.gif' %}) no-repeat scroll center center #FFF;">
+</div>
+
+
+<!--Top Header Area Start-->
+{% include 'includes/_navbars.html' %}
+<!--Main-Menu Area Ends-->
+
+
+
+
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb-area" style="background: url(../assets/images/1563350864breadcrumb_bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="pagetitle">
+                    Register
+                </h1>
+
+                <ul class="pages">
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            Register
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Area End -->
+
+
+<section class="login-signup">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="log-reg-tab-wrapper">
+                    <div class="log-reg-tab-menu">
+                        <ul class="nav" id="pills-tab" role="tablist">
+
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile"
+                                    role="tab" aria-controls="pills-profile" aria-selected="false">
+                                    Register
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-signup" role="tabpanel"
+                            aria-labelledby="pills-signup-tab">
+
+
+
+
+                        </div>
+                        <div class="tab-pane fade show active" id="pills-profile" role="tabpanel"
+                            aria-labelledby="pills-profile-tab">
+
+                            <div class="login-area signup-area">
+                                <div class="login-form signup-form">
+                                    <form id="regForm" name="registerForm" method="post">
+                                        <div class="alert alert-info validation" style="display: none;">
+                                            <p class="text-left"></p>
+                                        </div>
+                                        <div class="alert alert-success validation" style="display: none;">
+                                            <button type="button" class="close alert-close"><span>×</span></button>
+                                            <p class="text-left"></p>
+                                        </div>
+                                        <div class="alert alert-danger validation" style="display: none;">
+                                            <button type="button" class="close alert-close"><span>×</span></button>
+                                            <p class="text-left"></p>
+                                        </div>
+                                        <div class="col-xl-12" id='message'>
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="form-input">
+                                                    <input type="text" class="User Name" name='name' autocomplete="off"
+                                                        placeholder="First name" required="">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-input">
+                                                    <input type="text" class="User Name" name='lastname'
+                                                        placeholder="Last Name" required="">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input type="text" class="User Name" name="username" id="username"
+                                                        placeholder="username" required="">
+                                                    <i class="fas fa-user-circle"></i>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input type="email" class="User Name" name="email"
+                                                        placeholder="Email Address" required="">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input type="tel" id="regphone" class="User Name" name="phone"
+                                                        placeholder="Phone Number" required="">
+                                                    <i class="fas fa-phone"></i>
+
+                                                </div>
+                                                <div style="" id="CheckPhoneMatch1"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input type="text" class="User Name" name="address"
+                                                        placeholder="Address" required="">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input {% if ref %}value='{{ref}}' readonly{% endif %} type="text"
+                                                        class="User Name" name="address" placeholder="Referral">
+                                                    <i class="fas fa-user-plus"></i>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input type="password" class="Password pr-password"  name="password"
+                                                        placeholder="Password" required="" id="regpass">
+                                                    <i class="fas fa-key"></i>
+                                                </div>
+                                                <div style="margin-top: 7px; margin-left: 22px;"
+                                                    id="CheckPasswordMatch1"></div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input type="password" class="Password" name="password2"
+                                                        placeholder="Confirm Password" id="regpass1" required="">
+                                                    <i class="fas fa-key"></i>
+                                                </div>
+                                                <div style="margin-top: 7px; margin-left: 22px;"
+                                                    id="CheckPasswordMatch"></div>
+
+                                            </div>
+                                        </div>
+
+                                        <button id="regbtn" type="submit" class="submit-btn">Register</button>
+                                        <br>
+                                        <a href="{% url 'main:login' %}" class="forgot-pass">Alreeady have an account? Login</a>
+
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'includes/_footer.html' %}
+{% include 'includes/_scripts.html' %}
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% block content %}
+  {% load static %}
+  
+        <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- /.End of loader wrapper-->
+    {% include 'includes/_navbars.html' %}
+<!-- DEBUG-VIEW ENDED 2 APPPATH/Config/../Views/themes/website_template/header.php -->
+<!-- DEBUG-VIEW START 3 APPPATH/Config/../Views/themes/website_template/layout.php -->
+<!-- DEBUG-VIEW START 1 APPPATH/Config/../Views/themes/website_template/about.php -->
+       <div class="page_header" data-parallax-bg-image="https://phpcryptomarket.bdtask.com/demo-v4.0/public/uploads/bbe04e1e2d4d77e63f90f06d034fe576.jpg" data-parallax-direction="">
+            <div class="header-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <div class="haeder-text">
+                                <h1>Service</h1>
+                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% include 'includes/_service.html' %}
+        {% include 'includes/_partners.html' %}
+        <!-- /.End of testimonial content -->
+<!-- DEBUG-VIEW ENDED 1 APPPATH/Config/../Views/themes/website_template/about.php -->
+
+<!-- DEBUG-VIEW ENDED 3 APPPATH/Config/../Views/themes/website_template/layout.php -->
+<!-- DEBUG-VIEW START 4 APPPATH/Config/../Views/themes/website_template/footer.php -->
+
+
+
+    {% include 'includes/_footer.html' %}
+   
+
+
+  {% endblock %}

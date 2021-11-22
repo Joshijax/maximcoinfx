@@ -1,0 +1,1469 @@
+
+    /* CodeIgniter 4 - Debug bar ============================================================================ */
+    /* Forum: https://forum.codeigniter.com * Github: https://github.com/codeigniter4/codeigniter4 * Slack: https://codeigniterchat.slack.com * Website: https://codeigniter.com */
+    #debug-icon {
+      bottom: 0;
+      position: fixed;
+      right: 0;
+      z-index: 10000;
+      height: 36px;
+      width: 36px;
+      margin: 0px;
+      padding: 0px;
+      clear: both;
+      text-align: center;
+    }
+
+    #debug-icon a svg {
+      margin: 8px;
+      max-width: 20px;
+      max-height: 20px;
+    }
+
+    #debug-icon.fixed-top {
+      bottom: auto;
+      top: 0;
+    }
+
+    #debug-icon .debug-bar-ndisplay {
+      display: none;
+    }
+
+    #debug-bar {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      z-index: 10000;
+      height: 36px;
+      line-height: 36px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    #debug-bar h1 {
+      bottom: 0;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0 16px 0 0;
+      padding: 0;
+      position: absolute;
+      right: 30px;
+      text-align: left;
+      top: 0;
+    }
+
+    #debug-bar h2 {
+      font-size: 16px;
+      margin: 0;
+      padding: 5px 0 10px 0;
+    }
+
+    #debug-bar h2 span {
+      font-size: 13px;
+    }
+
+    #debug-bar h3 {
+      font-size: 12px;
+      font-weight: 200;
+      margin: 0 0 0 10px;
+      padding: 0;
+      text-transform: uppercase;
+    }
+
+    #debug-bar p {
+      font-size: 12px;
+      margin: 0 0 0 15px;
+      padding: 0;
+    }
+
+    #debug-bar a {
+      text-decoration: none;
+    }
+
+    #debug-bar a:hover {
+      text-decoration: underline;
+    }
+
+    #debug-bar button {
+      border: 1px solid;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      cursor: pointer;
+      line-height: 15px;
+    }
+
+    #debug-bar button:hover {
+      text-decoration: underline;
+    }
+
+    #debug-bar table {
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: normal;
+      margin: 5px 10px 15px 10px;
+      width: calc(100% - 10px);
+    }
+
+    #debug-bar table strong {
+      font-weight: 500;
+    }
+
+    #debug-bar table th {
+      display: table-cell;
+      font-weight: 600;
+      padding-bottom: 0.7em;
+      text-align: left;
+    }
+
+    #debug-bar table tr {
+      border: none;
+    }
+
+    #debug-bar table td {
+      border: none;
+      display: table-cell;
+      margin: 0;
+      text-align: left;
+    }
+
+    #debug-bar table td:first-child {
+      max-width: 20%;
+    }
+
+    #debug-bar table td:first-child.narrow {
+      width: 7em;
+    }
+
+    #debug-bar .toolbar {
+      display: block;
+      overflow: hidden;
+      overflow-y: auto;
+      padding: 0 12px 0 12px;
+      /* give room for OS X scrollbar */
+      white-space: nowrap;
+      z-index: 10000;
+    }
+
+    #debug-bar.fixed-top {
+      bottom: auto;
+      top: 0;
+    }
+
+    #debug-bar.fixed-top .tab {
+      bottom: auto;
+      top: 36px;
+    }
+
+    #debug-bar #toolbar-position a,
+    #debug-bar #toolbar-theme a {
+      float: left;
+      padding: 0 6px;
+    }
+
+    #debug-bar #toolbar-position a:hover,
+    #debug-bar #toolbar-theme a:hover {
+      text-decoration: none;
+    }
+
+    #debug-bar #debug-bar-link {
+      bottom: 0;
+      display: inline-block;
+      font-size: 16px;
+      line-height: 36px;
+      padding: 6px;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      width: 24px;
+    }
+
+    #debug-bar .ci-label {
+      display: inline-block;
+      font-size: 14px;
+      vertical-align: baseline;
+    }
+
+    #debug-bar .ci-label:hover {
+      cursor: pointer;
+    }
+
+    #debug-bar .ci-label a {
+      color: inherit;
+      display: block;
+      letter-spacing: normal;
+      padding: 0 10px;
+      text-decoration: none;
+    }
+
+    #debug-bar .ci-label img {
+      clear: left;
+      display: inline-block;
+      float: left;
+      margin: 6px 3px 6px 0;
+      width: 16px !important;
+    }
+
+    #debug-bar .ci-label .badge {
+      border-radius: 12px;
+      -moz-border-radius: 12px;
+      -webkit-border-radius: 12px;
+      display: inline-block;
+      font-size: 75%;
+      font-weight: bold;
+      line-height: 12px;
+      margin-left: 5px;
+      padding: 2px 5px;
+      text-align: center;
+      vertical-align: baseline;
+      white-space: nowrap;
+    }
+
+    #debug-bar .tab {
+      bottom: 35px;
+      display: none;
+      left: 0;
+      max-height: 62%;
+      overflow: hidden;
+      overflow-y: auto;
+      padding: 1em 2em;
+      position: fixed;
+      right: 0;
+      z-index: 9999;
+    }
+
+    #debug-bar .timeline {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    #debug-bar .timeline th {
+      border-left: 1px solid;
+      font-size: 12px;
+      font-weight: 200;
+      padding: 5px 5px 10px 5px;
+      position: relative;
+      text-align: left;
+    }
+
+    #debug-bar .timeline th:first-child {
+      border-left: 0;
+    }
+
+    #debug-bar .timeline td {
+      border-left: 1px solid;
+      padding: 5px;
+      position: relative;
+    }
+
+    #debug-bar .timeline td:first-child {
+      border-left: 0;
+    }
+
+    #debug-bar .timeline .timer {
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      display: inline-block;
+      padding: 5px;
+      position: absolute;
+      top: 30%;
+    }
+
+    #debug-bar .route-params,
+    #debug-bar .route-params-item {
+      vertical-align: top;
+    }
+
+    #debug-bar .route-params td:first-child,
+    #debug-bar .route-params-item td:first-child {
+      font-style: italic;
+      padding-left: 1em;
+      text-align: right;
+    }
+
+    .debug-view.show-view {
+      border: 1px solid;
+      margin: 4px;
+    }
+
+    .debug-view-path {
+      font-family: monospace;
+      font-size: 12px;
+      letter-spacing: normal;
+      min-height: 16px;
+      padding: 2px;
+      text-align: left;
+    }
+
+    .show-view .debug-view-path {
+      display: block !important;
+    }
+
+    @media screen and (max-width: 1024px) {
+      .hide-sm {
+        display: none !important;
+      }
+    }
+
+    #debug-icon {
+      background-color: #FFFFFF;
+      box-shadow: 0 0 4px #DFDFDF;
+      -moz-box-shadow: 0 0 4px #DFDFDF;
+      -webkit-box-shadow: 0 0 4px #DFDFDF;
+    }
+
+    #debug-icon a:active,
+    #debug-icon a:link,
+    #debug-icon a:visited {
+      color: #DD8615;
+    }
+
+    #debug-bar {
+      background-color: #FFFFFF;
+      color: #434343;
+    }
+
+    #debug-bar h1,
+    #debug-bar h2,
+    #debug-bar h3,
+    #debug-bar p,
+    #debug-bar a,
+    #debug-bar button,
+    #debug-bar table,
+    #debug-bar thead,
+    #debug-bar tr,
+    #debug-bar td,
+    #debug-bar button,
+    #debug-bar .toolbar {
+      background-color: transparent;
+      color: #434343;
+    }
+
+    #debug-bar button {
+      background-color: #FFFFFF;
+    }
+
+    #debug-bar table strong {
+      color: #FDC894;
+    }
+
+    #debug-bar table tbody tr:hover {
+      background-color: #DFDFDF;
+    }
+
+    #debug-bar table tbody tr.current {
+      background-color: #FDC894;
+    }
+
+    #debug-bar table tbody tr.current:hover td {
+      background-color: #DD4814;
+      color: #FFFFFF;
+    }
+
+    #debug-bar .toolbar {
+      background-color: #FFFFFF;
+      box-shadow: 0 0 4px #DFDFDF;
+      -moz-box-shadow: 0 0 4px #DFDFDF;
+      -webkit-box-shadow: 0 0 4px #DFDFDF;
+    }
+
+    #debug-bar .toolbar img {
+      filter: brightness(0) invert(0.4);
+    }
+
+    #debug-bar.fixed-top .toolbar {
+      box-shadow: 0 0 4px #DFDFDF;
+      -moz-box-shadow: 0 0 4px #DFDFDF;
+      -webkit-box-shadow: 0 0 4px #DFDFDF;
+    }
+
+    #debug-bar.fixed-top .tab {
+      box-shadow: 0 1px 4px #DFDFDF;
+      -moz-box-shadow: 0 1px 4px #DFDFDF;
+      -webkit-box-shadow: 0 1px 4px #DFDFDF;
+    }
+
+    #debug-bar .muted {
+      color: #434343;
+    }
+
+    #debug-bar .muted td {
+      color: #DFDFDF;
+    }
+
+    #debug-bar .muted:hover td {
+      color: #434343;
+    }
+
+    #debug-bar #toolbar-position,
+    #debug-bar #toolbar-theme {
+      filter: brightness(0) invert(0.6);
+    }
+
+    #debug-bar .ci-label.active {
+      background-color: #DFDFDF;
+    }
+
+    #debug-bar .ci-label:hover {
+      background-color: #DFDFDF;
+    }
+
+    #debug-bar .ci-label .badge {
+      background-color: #5BC0DE;
+      color: #FFFFFF;
+    }
+
+    #debug-bar .tab {
+      background-color: #FFFFFF;
+      box-shadow: 0 -1px 4px #DFDFDF;
+      -moz-box-shadow: 0 -1px 4px #DFDFDF;
+      -webkit-box-shadow: 0 -1px 4px #DFDFDF;
+    }
+
+    #debug-bar .timeline th,
+    #debug-bar .timeline td {
+      border-color: #DFDFDF;
+    }
+
+    #debug-bar .timeline .timer {
+      background-color: #DD8615;
+    }
+
+    .debug-view.show-view {
+      border-color: #DD8615;
+    }
+
+    .debug-view-path {
+      background-color: #FDC894;
+      color: #434343;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      #debug-icon {
+        background-color: #252525;
+        box-shadow: 0 0 4px #DFDFDF;
+        -moz-box-shadow: 0 0 4px #DFDFDF;
+        -webkit-box-shadow: 0 0 4px #DFDFDF;
+      }
+
+      #debug-icon a:active,
+      #debug-icon a:link,
+      #debug-icon a:visited {
+        color: #DD8615;
+      }
+
+      #debug-bar {
+        background-color: #252525;
+        color: #DFDFDF;
+      }
+
+      #debug-bar h1,
+      #debug-bar h2,
+      #debug-bar h3,
+      #debug-bar p,
+      #debug-bar a,
+      #debug-bar button,
+      #debug-bar table,
+      #debug-bar thead,
+      #debug-bar tr,
+      #debug-bar td,
+      #debug-bar button,
+      #debug-bar .toolbar {
+        background-color: transparent;
+        color: #DFDFDF;
+      }
+
+      #debug-bar button {
+        background-color: #252525;
+      }
+
+      #debug-bar table strong {
+        color: #FDC894;
+      }
+
+      #debug-bar table tbody tr:hover {
+        background-color: #434343;
+      }
+
+      #debug-bar table tbody tr.current {
+        background-color: #FDC894;
+      }
+
+      #debug-bar table tbody tr.current td {
+        color: #252525;
+      }
+
+      #debug-bar table tbody tr.current:hover td {
+        background-color: #DD4814;
+        color: #FFFFFF;
+      }
+
+      #debug-bar .toolbar {
+        background-color: #434343;
+        box-shadow: 0 0 4px #434343;
+        -moz-box-shadow: 0 0 4px #434343;
+        -webkit-box-shadow: 0 0 4px #434343;
+      }
+
+      #debug-bar .toolbar img {
+        filter: brightness(0) invert(1);
+      }
+
+      #debug-bar.fixed-top .toolbar {
+        box-shadow: 0 0 4px #434343;
+        -moz-box-shadow: 0 0 4px #434343;
+        -webkit-box-shadow: 0 0 4px #434343;
+      }
+
+      #debug-bar.fixed-top .tab {
+        box-shadow: 0 1px 4px #434343;
+        -moz-box-shadow: 0 1px 4px #434343;
+        -webkit-box-shadow: 0 1px 4px #434343;
+      }
+
+      #debug-bar .muted {
+        color: #DFDFDF;
+      }
+
+      #debug-bar .muted td {
+        color: #434343;
+      }
+
+      #debug-bar .muted:hover td {
+        color: #DFDFDF;
+      }
+
+      #debug-bar #toolbar-position,
+      #debug-bar #toolbar-theme {
+        filter: brightness(0) invert(0.6);
+      }
+
+      #debug-bar .ci-label.active {
+        background-color: #252525;
+      }
+
+      #debug-bar .ci-label:hover {
+        background-color: #252525;
+      }
+
+      #debug-bar .ci-label .badge {
+        background-color: #5BC0DE;
+        color: #DFDFDF;
+      }
+
+      #debug-bar .tab {
+        background-color: #252525;
+        box-shadow: 0 -1px 4px #434343;
+        -moz-box-shadow: 0 -1px 4px #434343;
+        -webkit-box-shadow: 0 -1px 4px #434343;
+      }
+
+      #debug-bar .timeline th,
+      #debug-bar .timeline td {
+        border-color: #434343;
+      }
+
+      #debug-bar .timeline .timer {
+        background-color: #DD8615;
+      }
+
+      .debug-view.show-view {
+        border-color: #DD8615;
+      }
+
+      .debug-view-path {
+        background-color: #FDC894;
+        color: #434343;
+      }
+    }
+
+    #toolbarContainer.dark #debug-icon {
+      background-color: #252525;
+      box-shadow: 0 0 4px #DFDFDF;
+      -moz-box-shadow: 0 0 4px #DFDFDF;
+      -webkit-box-shadow: 0 0 4px #DFDFDF;
+    }
+
+    #toolbarContainer.dark #debug-icon a:active,
+    #toolbarContainer.dark #debug-icon a:link,
+    #toolbarContainer.dark #debug-icon a:visited {
+      color: #DD8615;
+    }
+
+    #toolbarContainer.dark #debug-bar {
+      background-color: #252525;
+      color: #DFDFDF;
+    }
+
+    #toolbarContainer.dark #debug-bar h1,
+    #toolbarContainer.dark #debug-bar h2,
+    #toolbarContainer.dark #debug-bar h3,
+    #toolbarContainer.dark #debug-bar p,
+    #toolbarContainer.dark #debug-bar a,
+    #toolbarContainer.dark #debug-bar button,
+    #toolbarContainer.dark #debug-bar table,
+    #toolbarContainer.dark #debug-bar thead,
+    #toolbarContainer.dark #debug-bar tr,
+    #toolbarContainer.dark #debug-bar td,
+    #toolbarContainer.dark #debug-bar button,
+    #toolbarContainer.dark #debug-bar .toolbar {
+      background-color: transparent;
+      color: #DFDFDF;
+    }
+
+    #toolbarContainer.dark #debug-bar button {
+      background-color: #252525;
+    }
+
+    #toolbarContainer.dark #debug-bar table strong {
+      color: #FDC894;
+    }
+
+    #toolbarContainer.dark #debug-bar table tbody tr:hover {
+      background-color: #434343;
+    }
+
+    #toolbarContainer.dark #debug-bar table tbody tr.current {
+      background-color: #FDC894;
+    }
+
+    #toolbarContainer.dark #debug-bar table tbody tr.current td {
+      color: #252525;
+    }
+
+    #toolbarContainer.dark #debug-bar table tbody tr.current:hover td {
+      background-color: #DD4814;
+      color: #FFFFFF;
+    }
+
+    #toolbarContainer.dark #debug-bar .toolbar {
+      background-color: #434343;
+      box-shadow: 0 0 4px #434343;
+      -moz-box-shadow: 0 0 4px #434343;
+      -webkit-box-shadow: 0 0 4px #434343;
+    }
+
+    #toolbarContainer.dark #debug-bar .toolbar img {
+      filter: brightness(0) invert(1);
+    }
+
+    #toolbarContainer.dark #debug-bar.fixed-top .toolbar {
+      box-shadow: 0 0 4px #434343;
+      -moz-box-shadow: 0 0 4px #434343;
+      -webkit-box-shadow: 0 0 4px #434343;
+    }
+
+    #toolbarContainer.dark #debug-bar.fixed-top .tab {
+      box-shadow: 0 1px 4px #434343;
+      -moz-box-shadow: 0 1px 4px #434343;
+      -webkit-box-shadow: 0 1px 4px #434343;
+    }
+
+    #toolbarContainer.dark #debug-bar .muted {
+      color: #DFDFDF;
+    }
+
+    #toolbarContainer.dark #debug-bar .muted td {
+      color: #434343;
+    }
+
+    #toolbarContainer.dark #debug-bar .muted:hover td {
+      color: #DFDFDF;
+    }
+
+    #toolbarContainer.dark #debug-bar #toolbar-position,
+    #toolbarContainer.dark #debug-bar #toolbar-theme {
+      filter: brightness(0) invert(0.6);
+    }
+
+    #toolbarContainer.dark #debug-bar .ci-label.active {
+      background-color: #252525;
+    }
+
+    #toolbarContainer.dark #debug-bar .ci-label:hover {
+      background-color: #252525;
+    }
+
+    #toolbarContainer.dark #debug-bar .ci-label .badge {
+      background-color: #5BC0DE;
+      color: #DFDFDF;
+    }
+
+    #toolbarContainer.dark #debug-bar .tab {
+      background-color: #252525;
+      box-shadow: 0 -1px 4px #434343;
+      -moz-box-shadow: 0 -1px 4px #434343;
+      -webkit-box-shadow: 0 -1px 4px #434343;
+    }
+
+    #toolbarContainer.dark #debug-bar .timeline th,
+    #toolbarContainer.dark #debug-bar .timeline td {
+      border-color: #434343;
+    }
+
+    #toolbarContainer.dark #debug-bar .timeline .timer {
+      background-color: #DD8615;
+    }
+
+    #toolbarContainer.dark .debug-view.show-view {
+      border-color: #DD8615;
+    }
+
+    #toolbarContainer.dark .debug-view-path {
+      background-color: #FDC894;
+      color: #434343;
+    }
+
+    #toolbarContainer.light #debug-icon {
+      background-color: #FFFFFF;
+      box-shadow: 0 0 4px #DFDFDF;
+      -moz-box-shadow: 0 0 4px #DFDFDF;
+      -webkit-box-shadow: 0 0 4px #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-icon a:active,
+    #toolbarContainer.light #debug-icon a:link,
+    #toolbarContainer.light #debug-icon a:visited {
+      color: #DD8615;
+    }
+
+    #toolbarContainer.light #debug-bar {
+      background-color: #FFFFFF;
+      color: #434343;
+    }
+
+    #toolbarContainer.light #debug-bar h1,
+    #toolbarContainer.light #debug-bar h2,
+    #toolbarContainer.light #debug-bar h3,
+    #toolbarContainer.light #debug-bar p,
+    #toolbarContainer.light #debug-bar a,
+    #toolbarContainer.light #debug-bar button,
+    #toolbarContainer.light #debug-bar table,
+    #toolbarContainer.light #debug-bar thead,
+    #toolbarContainer.light #debug-bar tr,
+    #toolbarContainer.light #debug-bar td,
+    #toolbarContainer.light #debug-bar button,
+    #toolbarContainer.light #debug-bar .toolbar {
+      background-color: transparent;
+      color: #434343;
+    }
+
+    #toolbarContainer.light #debug-bar button {
+      background-color: #FFFFFF;
+    }
+
+    #toolbarContainer.light #debug-bar table strong {
+      color: #FDC894;
+    }
+
+    #toolbarContainer.light #debug-bar table tbody tr:hover {
+      background-color: #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar table tbody tr.current {
+      background-color: #FDC894;
+    }
+
+    #toolbarContainer.light #debug-bar table tbody tr.current:hover td {
+      background-color: #DD4814;
+      color: #FFFFFF;
+    }
+
+    #toolbarContainer.light #debug-bar .toolbar {
+      background-color: #FFFFFF;
+      box-shadow: 0 0 4px #DFDFDF;
+      -moz-box-shadow: 0 0 4px #DFDFDF;
+      -webkit-box-shadow: 0 0 4px #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar .toolbar img {
+      filter: brightness(0) invert(0.4);
+    }
+
+    #toolbarContainer.light #debug-bar.fixed-top .toolbar {
+      box-shadow: 0 0 4px #DFDFDF;
+      -moz-box-shadow: 0 0 4px #DFDFDF;
+      -webkit-box-shadow: 0 0 4px #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar.fixed-top .tab {
+      box-shadow: 0 1px 4px #DFDFDF;
+      -moz-box-shadow: 0 1px 4px #DFDFDF;
+      -webkit-box-shadow: 0 1px 4px #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar .muted {
+      color: #434343;
+    }
+
+    #toolbarContainer.light #debug-bar .muted td {
+      color: #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar .muted:hover td {
+      color: #434343;
+    }
+
+    #toolbarContainer.light #debug-bar #toolbar-position,
+    #toolbarContainer.light #debug-bar #toolbar-theme {
+      filter: brightness(0) invert(0.6);
+    }
+
+    #toolbarContainer.light #debug-bar .ci-label.active {
+      background-color: #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar .ci-label:hover {
+      background-color: #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar .ci-label .badge {
+      background-color: #5BC0DE;
+      color: #FFFFFF;
+    }
+
+    #toolbarContainer.light #debug-bar .tab {
+      background-color: #FFFFFF;
+      box-shadow: 0 -1px 4px #DFDFDF;
+      -moz-box-shadow: 0 -1px 4px #DFDFDF;
+      -webkit-box-shadow: 0 -1px 4px #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar .timeline th,
+    #toolbarContainer.light #debug-bar .timeline td {
+      border-color: #DFDFDF;
+    }
+
+    #toolbarContainer.light #debug-bar .timeline .timer {
+      background-color: #DD8615;
+    }
+
+    #toolbarContainer.light .debug-view.show-view {
+      border-color: #DD8615;
+    }
+
+    #toolbarContainer.light .debug-view-path {
+      background-color: #FDC894;
+      color: #434343;
+    }
+
+    .debug-bar-width30 {
+      width: 30%;
+    }
+
+    .debug-bar-width10 {
+      width: 10%;
+    }
+
+    .debug-bar-width70p {
+      width: 70px;
+    }
+
+    .debug-bar-width140p {
+      width: 140px;
+    }
+
+    .debug-bar-width20e {
+      width: 20em;
+    }
+
+    .debug-bar-width6r {
+      width: 6rem;
+    }
+
+    .debug-bar-ndisplay {
+      display: none;
+    }
+
+    .debug-bar-alignRight {
+      text-align: right;
+    }
+
+    .debug-bar-alignLeft {
+      text-align: left;
+    }
+
+    .debug-bar-noverflow {
+      overflow: hidden;
+    }
+
+    #debug-bar td[data-debugbar-route] form {
+      display: none;
+    }
+
+    #debug-bar td[data-debugbar-route]:hover form {
+      display: block;
+    }
+
+    #debug-bar td[data-debugbar-route]:hover>div {
+      display: none;
+    }
+
+    #debug-bar td[data-debugbar-route] input[type=text] {
+      padding: 2px;
+    }
+
+    #toolbarContainer.dark td[data-debugbar-route] input[type=text] {
+      background: #000;
+      color: #fff;
+    }
+
+    .debug-bar-timeline-0 {
+      left: 0.10890620095389%;
+      width: 6.8493400301252%;
+    }
+
+    .debug-bar-timeline-1 {
+      left: 6.9596937724522%;
+      width: 0.47428267342704%;
+    }
+
+    .debug-bar-timeline-2 {
+      left: 15.873908996582%;
+      width: 73.679004396711%;
+    }
+
+    .debug-bar-timeline-3 {
+      left: 15.875015939985%;
+      width: 2.7889013290405%;
+    }
+
+    .debug-bar-timeline-4 {
+      left: -1.6482387270246%;
+      width: 0.53%;
+    }
+
+    .debug-bar-timeline-5 {
+      left: 20.615713936942%;
+      width: 0.2425%;
+    }
+
+    .debug-bar-timeline-6 {
+      left: 20.972830908639%;
+      width: 0.11892857142857%;
+    }
+
+    .debug-bar-timeline-7 {
+      left: 21.15147454398%;
+      width: 0.091428571428571%;
+    }
+
+    .debug-bar-timeline-8 {
+      left: 21.294270242964%;
+      width: 0.175%;
+    }
+
+    .debug-bar-timeline-9 {
+      left: 21.54426915305%;
+      width: 0.70428571428571%;
+    }
+
+    .debug-bar-timeline-10 {
+      left: 22.401469094413%;
+      width: 0.11928571428571%;
+    }
+
+    .debug-bar-timeline-11 {
+      left: 22.580027580261%;
+      width: 0.094642857142857%;
+    }
+
+    .debug-bar-timeline-12 {
+      left: 22.722908428737%;
+      width: 0.090714285714286%;
+    }
+
+    .debug-bar-timeline-13 {
+      left: 22.86570412772%;
+      width: 0.092142857142857%;
+    }
+
+    .debug-bar-timeline-14 {
+      left: 23.044262613569%;
+      width: 0.0925%;
+    }
+
+    .debug-bar-timeline-15 {
+      left: 23.187143462045%;
+      width: 0.10178571428571%;
+    }
+
+    .debug-bar-timeline-16 {
+      left: 23.330024310521%;
+      width: 0.095357142857143%;
+    }
+
+    .debug-bar-timeline-17 {
+      left: 23.472905158997%;
+      width: 0.0975%;
+    }
+
+    .debug-bar-timeline-18 {
+      left: 23.651463644845%;
+      width: 0.097857142857143%;
+    }
+
+    .debug-bar-timeline-19 {
+      left: 23.794259343828%;
+      width: 0.096428571428571%;
+    }
+
+    .debug-bar-timeline-20 {
+      left: 23.97290297917%;
+      width: 0.093928571428571%;
+    }
+
+    .debug-bar-timeline-21 {
+      left: 24.115698678153%;
+      width: 0.091428571428571%;
+    }
+
+    .debug-bar-timeline-22 {
+      left: 24.258579526629%;
+      width: 0.10285714285714%;
+    }
+
+    .debug-bar-timeline-23 {
+      left: 24.437138012477%;
+      width: 0.083571428571429%;
+    }
+
+    .debug-bar-timeline-24 {
+      left: 24.580018860953%;
+      width: 0.096785714285714%;
+    }
+
+    .debug-bar-timeline-25 {
+      left: 24.722899709429%;
+      width: 0.12214285714286%;
+    }
+
+    .debug-bar-timeline-26 {
+      left: 24.901458195278%;
+      width: 0.095714285714286%;
+    }
+
+    .debug-bar-timeline-27 {
+      left: 25.080016681126%;
+      width: 0.083214285714286%;
+    }
+
+    .debug-bar-timeline-28 {
+      left: 25.222897529602%;
+      width: 0.083928571428571%;
+    }
+
+    .debug-bar-timeline-29 {
+      left: 25.365693228585%;
+      width: 0.088571428571429%;
+    }
+
+    .debug-bar-timeline-30 {
+      left: 25.508574077061%;
+      width: 0.092857142857143%;
+    }
+
+    .debug-bar-timeline-31 {
+      left: 25.651454925537%;
+      width: 0.10107142857143%;
+    }
+
+    .debug-bar-timeline-32 {
+      left: 25.794335774013%;
+      width: 0.097857142857143%;
+    }
+
+    .debug-bar-timeline-33 {
+      left: 25.972894259862%;
+      width: 0.090357142857143%;
+    }
+
+    .debug-bar-timeline-34 {
+      left: 26.115689958845%;
+      width: 0.091785714285714%;
+    }
+
+    .debug-bar-timeline-35 {
+      left: 26.258570807321%;
+      width: 0.098571428571429%;
+    }
+
+    .debug-bar-timeline-36 {
+      left: 26.437129293169%;
+      width: 0.0925%;
+    }
+
+    .debug-bar-timeline-37 {
+      left: 26.580010141645%;
+      width: 0.10714285714286%;
+    }
+
+    .debug-bar-timeline-38 {
+      left: 26.758568627494%;
+      width: 0.10571428571429%;
+    }
+
+    .debug-bar-timeline-39 {
+      left: 26.90144947597%;
+      width: 0.0975%;
+    }
+
+    .debug-bar-timeline-40 {
+      left: 27.044330324445%;
+      width: 0.10178571428571%;
+    }
+
+    .debug-bar-timeline-41 {
+      left: 27.222888810294%;
+      width: 0.091785714285714%;
+    }
+
+    .debug-bar-timeline-42 {
+      left: 27.36576965877%;
+      width: 0.091428571428571%;
+    }
+
+    .debug-bar-timeline-43 {
+      left: 27.508565357753%;
+      width: 0.0925%;
+    }
+
+    .debug-bar-timeline-44 {
+      left: 27.687123843602%;
+      width: 0.10464285714286%;
+    }
+
+    .debug-bar-timeline-45 {
+      left: 27.830004692078%;
+      width: 0.10642857142857%;
+    }
+
+    .debug-bar-timeline-46 {
+      left: 28.008563177926%;
+      width: 0.098214285714286%;
+    }
+
+    .debug-bar-timeline-47 {
+      left: 28.151444026402%;
+      width: 0.10392857142857%;
+    }
+
+    .debug-bar-timeline-48 {
+      left: 28.330002512251%;
+      width: 0.095%;
+    }
+
+    .debug-bar-timeline-49 {
+      left: 28.472883360726%;
+      width: 0.12892857142857%;
+    }
+
+    .debug-bar-timeline-50 {
+      left: 28.687119483948%;
+      width: 0.12714285714286%;
+    }
+
+    .debug-bar-timeline-51 {
+      left: 28.865763119289%;
+      width: 0.105%;
+    }
+
+    .debug-bar-timeline-52 {
+      left: 29.044321605137%;
+      width: 0.15392857142857%;
+    }
+
+    .debug-bar-timeline-53 {
+      left: 29.294320515224%;
+      width: 0.18642857142857%;
+    }
+
+    .debug-bar-timeline-54 {
+      left: 29.579997062683%;
+      width: 0.13785714285714%;
+    }
+
+    .debug-bar-timeline-55 {
+      left: 29.758555548532%;
+      width: 0.12785714285714%;
+    }
+
+    .debug-bar-timeline-56 {
+      left: 29.93711403438%;
+      width: 0.11928571428571%;
+    }
+
+    .debug-bar-timeline-57 {
+      left: 30.115757669721%;
+      width: 0.096785714285714%;
+    }
+
+    .debug-bar-timeline-58 {
+      left: 39.43715776716%;
+      width: 0.22821428571429%;
+    }
+
+    .debug-bar-timeline-59 {
+      left: 39.722834314619%;
+      width: 0.17714285714286%;
+    }
+
+    .debug-bar-timeline-60 {
+      left: 39.937155587333%;
+      width: 0.20964285714286%;
+    }
+
+    .debug-bar-timeline-61 {
+      left: 40.222832134792%;
+      width: 0.51214285714286%;
+    }
+
+    .debug-bar-timeline-62 {
+      left: 40.830033166068%;
+      width: 0.11785714285714%;
+    }
+
+    .debug-bar-timeline-63 {
+      left: 41.008591651917%;
+      width: 0.44607142857143%;
+    }
+
+    .debug-bar-timeline-64 {
+      left: 41.544267109462%;
+      width: 0.1125%;
+    }
+
+    .debug-bar-timeline-65 {
+      left: 41.722910744803%;
+      width: 0.47928571428571%;
+    }
+
+    .debug-bar-timeline-66 {
+      left: 42.258586202349%;
+      width: 0.10357142857143%;
+    }
+
+    .debug-bar-timeline-67 {
+      left: 42.437144688198%;
+      width: 0.49857142857143%;
+    }
+
+    .debug-bar-timeline-68 {
+      left: 43.008582932608%;
+      width: 0.105%;
+    }
+
+    .debug-bar-timeline-69 {
+      left: 43.151463781084%;
+      width: 0.4875%;
+    }
+
+    .debug-bar-timeline-70 {
+      left: 43.722902025495%;
+      width: 0.10285714285714%;
+    }
+
+    .debug-bar-timeline-71 {
+      left: 43.865697724479%;
+      width: 0.47%;
+    }
+
+    .debug-bar-timeline-72 {
+      left: 44.401458331517%;
+      width: 0.0975%;
+    }
+
+    .debug-bar-timeline-73 {
+      left: 44.544339179993%;
+      width: 0.48142857142857%;
+    }
+
+    .debug-bar-timeline-74 {
+      left: 45.080014637538%;
+      width: 0.098571428571429%;
+    }
+
+    .debug-bar-timeline-75 {
+      left: 45.258573123387%;
+      width: 0.47714285714286%;
+    }
+
+    .debug-bar-timeline-76 {
+      left: 45.75857094356%;
+      width: 0.10107142857143%;
+    }
+
+    .debug-bar-timeline-77 {
+      left: 45.937129429408%;
+      width: 0.48821428571429%;
+    }
+
+    .debug-bar-timeline-78 {
+      left: 46.472890036447%;
+      width: 0.10535714285714%;
+    }
+
+    .debug-bar-timeline-79 {
+      left: 46.61568573543%;
+      width: 0.46607142857143%;
+    }
+
+    .debug-bar-timeline-80 {
+      left: 47.151446342468%;
+      width: 0.10964285714286%;
+    }
+
+    .debug-bar-timeline-81 {
+      left: 47.330004828317%;
+      width: 0.47321428571429%;
+    }
+
+    .debug-bar-timeline-82 {
+      left: 47.865765435355%;
+      width: 0.10857142857143%;
+    }
+
+    .debug-bar-timeline-83 {
+      left: 48.044323921204%;
+      width: 0.4675%;
+    }
+
+    .debug-bar-timeline-84 {
+      left: 48.544321741377%;
+      width: 0.11928571428571%;
+    }
+
+    .debug-bar-timeline-85 {
+      left: 48.722880227225%;
+      width: 0.47285714285714%;
+    }
+
+    .debug-bar-timeline-86 {
+      left: 49.258555684771%;
+      width: 0.13607142857143%;
+    }
+
+    .debug-bar-timeline-87 {
+      left: 49.437114170619%;
+      width: 0.55607142857143%;
+    }
+
+    .debug-bar-timeline-88 {
+      left: 50.044315201896%;
+      width: 0.11035714285714%;
+    }
+
+    .debug-bar-timeline-89 {
+      left: 50.222873687744%;
+      width: 0.55892857142857%;
+    }
+
+    .debug-bar-timeline-90 {
+      left: 50.829989569528%;
+      width: 0.11107142857143%;
+    }
+
+    .debug-bar-timeline-91 {
+      left: 51.008548055376%;
+      width: 0.5725%;
+    }
+
+    .debug-bar-timeline-92 {
+      left: 51.722867148263%;
+      width: 0.13321428571429%;
+    }
+
+    .debug-bar-timeline-93 {
+      left: 51.937188420977%;
+      width: 0.46071428571429%;
+    }
+
+    .debug-bar-timeline-94 {
+      left: 52.43718624115%;
+      width: 0.10821428571429%;
+    }
+
+    .debug-bar-timeline-95 {
+      left: 52.579981940133%;
+      width: 0.41571428571429%;
+    }
+
+    .debug-bar-timeline-96 {
+      left: 53.044302122934%;
+      width: 0.094642857142857%;
+    }
+
+    .debug-bar-timeline-97 {
+      left: 53.222860608782%;
+      width: 0.425%;
+    }
+
+    .debug-bar-timeline-98 {
+      left: 53.687180791582%;
+      width: 0.093214285714286%;
+    }
+
+    .debug-bar-timeline-99 {
+      left: 53.829976490566%;
+      width: 0.42142857142857%;
+    }
+
+    .debug-bar-timeline-100 {
+      left: 54.329974310739%;
+      width: 0.099642857142857%;
+    }
+
+    .debug-bar-timeline-101 {
+      left: 54.472855159215%;
+      width: 0.43214285714286%;
+    }
+
+    .debug-bar-timeline-102 {
+      left: 54.937175342015%;
+      width: 0.11357142857143%;
+    }
+
+    .debug-bar-timeline-103 {
+      left: 55.115733827863%;
+      width: 0.43214285714286%;
+    }
+
+    .debug-bar-timeline-104 {
+      left: 55.651409285409%;
+      width: 0.10321428571429%;
+    }
+
+    .debug-bar-timeline-105 {
+      left: 30.330760138375%;
+      width: 0.74888978685652%;
+    }
+
+    .debug-bar-timeline-106 {
+      left: 31.105365071978%;
+      width: 7.5599976948329%;
+    }
+
+    .debug-bar-timeline-107 {
+      left: 38.740038871765%;
+      width: 0.16280582972935%;
+    }
+
+    .debug-bar-timeline-108 {
+      left: 38.946781839643%;
+      width: 0.0589234488351%;
+    }
+
+    .debug-bar-timeline-109 {
+      left: 39.022479738508%;
+      width: 50.337910652161%;
+    }
+
+    .debug-bar-timeline-110 {
+      left: 89.389341218131%;
+      width: 0.15599387032645%;
+    }
+  

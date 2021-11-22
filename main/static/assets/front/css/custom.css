@@ -1,0 +1,419 @@
+/*PAGINATION DESIGN*/
+
+.page-center ul.pagination li {
+  width: 35px;
+  height: 35px;
+  background: #ff55001a;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 35px;
+  margin: 0px 5px;
+  transition: all .3s;
+  display: inline-block;
+  color: #000;
+}
+
+.page-center ul.pagination li a:hover {
+  color: #000 !important;
+}
+
+.page-center ul.pagination {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.page-center ul.pagination li.active {
+  background: #ff5500;
+  color: #fff;
+  cursor: no-drop;
+}
+
+.page-center {
+  text-align: center;
+}
+
+/*PAGINATION DESIGN ENDS*/
+
+/*-------------------------
+  Preloader Css
+---------------------------*/
+.preloader {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #fff;
+z-index: 9999999;
+}
+/* PRELOADER CSS ENDS*/
+
+/* Page Disabled */
+  ul.pagination li.disabled {
+    cursor: no-drop;
+  }
+/* Page Disabled End */
+.feature-image img {
+width: 100%;
+}
+.pointer {
+cursor: pointer;
+}
+.gocover {
+  display:none;
+  position: absolute;
+  position: fixed; 
+  left: 0; 
+  top: 0; 
+  z-index: 999; 
+  width: 100%; 
+  height: 100%; 
+  overflow: visible;
+}
+
+.mybtn1.lg {
+width: 200px;
+}
+
+
+
+
+/*====================
+Thank you Area Start
+=====================*/
+.thankyou {
+padding: 100px 0px 100px; }
+.thankyou .content {
+  background: #010860;
+  padding: 20px 30px 50px;
+  text-align: center;
+  }
+  .thankyou .content .icon {
+    font-size: 90px;
+    color: #ff5500; }
+  .thankyou .content .heading {
+    font-size: 28px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600; }
+  .thankyou .content .text {
+    color: #fff;
+    margin-bottom: 0px; }
+  .thankyou .content a.link {
+    color: #fff;
+    margin-top: 20px;
+    display: block;
+    text-decoration: underline;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600; }
+
+
+
+/*====================
+404 Area Start
+=====================*/
+.fourzerofour {
+padding: 100px 0px 100px;
+text-align: center; }
+.fourzerofour .content {
+  text-align: center; }
+  .fourzerofour .content .heading {
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 700;
+    color: #28384f;
+    margin: 40px 0px 25px; }
+  .fourzerofour .content .text {
+    max-width: 450px;
+    display: block;
+    margin: 0 auto; }
+  .fourzerofour .content .mybtn1 {
+    margin-top: 28px;; }
+
+/*
+Select option style Start
+*/
+      .top-header .content .right-content .language-selector .language option{
+        color: #242424;
+      }
+    .top-header .content .right-content .currency-selector {
+      margin-right: 10px;
+      display: inline-block; }
+      .top-header .content .right-content .currency-selector i {
+        color: #242424;
+        font-size: 16px;
+        margin-top: 2px; }
+      .top-header .content .right-content .currency-selector .currency {
+        border: none;
+        color: #242424;
+        cursor: pointer;
+        background: none;
+        font-size: 14px; }
+.top-header .content .right-content .currency-selector .currency option{
+color: #242424;
+}
+
+
+/* Capcha Code Area  */
+
+i.fas.fa-sync-alt.pointer.refresh_code {
+  font-size: 22px;
+  padding-left: 10px;
+}
+
+/* Capcha Code Area Ends  */
+
+/*
+Select option style Start
+
+
+
+/*---------------------------
+** LOgin Signup  Area Start
+---------------------------*/
+.login-signup {
+padding: 60px 0px 60px; }
+.login-area {
+  padding: 30px 30px 39px;
+  background: #fff;
+  -webkit-box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1); }
+   .login-area .header-area {
+    text-align: center;
+    margin-bottom: 40px; }
+     .login-area .header-area .title {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 40px;
+      color: #1f71d4;
+      }
+    .login-area .header-area .text {
+      font-size: 18px;
+      color: #919191; }
+   .login-area .form-input {
+    position: relative;
+    margin-bottom: 15px; }
+     .login-area .form-input input {
+      width: 100%;
+      height: 50px;
+      background: #f3f8fc;
+      padding: 0px 30px 0px 45px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      font-size: 14px; }
+    .login-area .form-input i {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      left: 15px;
+      color: #1f71d4; }
+
+      /*-------------------------------
+Order Details Start
+--------------------------------*/
+.order-details {
+padding: 100px 0px 100px; }
+.order-details .order-details-box {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+  }
+.order-details .pricing{
+  padding: 0px
+}
+.order-details input{
+  height: 40px;
+}
+
+.order-details .order-details-box .content{
+  padding: 15px 20px 30px 20px;
+}
+
+
+  .order-details .order-details-box .header {
+    background: rgba(31, 113, 212, 0.1);
+    text-align: center;
+    padding: 16px 0px;
+   }
+    .order-details .order-details-box .header .title {
+      color: #343131;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 0px;
+      }
+  .order-details .order-details-box .content .patment-method {
+    width: 100%;
+    background: #e8f1fb;
+    height: 50px;
+    border: 0px;
+    border-radius: 50px;
+    padding: 0px 30px;
+    color: #000;
+    margin-top: 20px;
+    }
+  .order-details .order-details-box .content .btn-checkout {
+    border: 1px solid #1242c9;
+    background: none;
+    display: inline-block;
+    padding: 10px 40px;
+    margin-top: 30px;
+    border-radius: 50px;
+    color: #1242c9;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in; }
+    .order-details .order-details-box .content .btn-checkout:hover {
+      background: #1242c9;
+      color: #fff; }
+.order-details .pricing-plan {
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+ }
+  .order-details .pricing-plan .header-area {
+    padding: 21px 20px 26px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center; }
+    .order-details .pricing-plan .header-area .title {
+      font-size: 24px;
+      line-height: normal;
+      margin-bottom: 0px; }
+    .order-details .pricing-plan .header-area .sub-title {
+      margin-bottom: 0px; }
+  .order-details .pricing-plan .pricing-area {
+    text-align: center;
+    padding: 12px 30px 5px; }
+    .order-details .pricing-plan .pricing-area p {
+      margin-bottom: 10px;
+      font-size: 25px;
+      }
+      .order-details .pricing-plan .pricing-area p sup {
+        font-size: 24px;
+        position: relative;
+        top: -25px; }
+      .order-details .pricing-plan .pricing-area p sub {
+        font-size: 16px;
+        position: relative;
+        bottom: 0px;
+        left: -6px; }
+  .order-details .pricing-plan .content {
+    padding: 0px 30px 30px;
+    text-align: center; }
+    .order-details .pricing-plan .content p {
+      color: #fff;
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 0px; }
+.profile-area-img{
+width: 40px;
+height: 40px;
+}
+.profile-area{
+position: relative;
+margin-left: 10px;
+}
+.profile-area a{
+transition: all linear .3s;
+}
+.profile-area a:hover{
+color: #1f71d4;
+}
+.profile-area-content{
+position: absolute;
+top: 100%;
+width:  180px;
+right: 0px;
+background: #fff;
+box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+padding: 10px 10px;
+display: none;
+}
+.profile-area-content li a{
+line-height: 35px;
+font-weight: 600;
+font-size: 15px;
+transition: all linear .3s;
+}
+.profile-area-content li a:hover{
+ color: #1f71d4;
+}
+.profile-area-content li a i{
+font-size: 12px;
+margin-right: 4px;
+}
+
+
+
+    .pricing .single-pricebox .price-range-area-checkout {
+      margin: 33px 0px 9px; }
+      .pricing .single-pricebox .price-range-area-checkout .invest-count {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; }
+        .pricing .single-pricebox .price-range-area-checkout .invest-count .left {
+          font-weight: 600;
+          margin-bottom: 0px; }
+        .pricing .single-pricebox .price-range-area-checkout .invest-count .right {
+          font-weight: 600;
+          margin-bottom: 0px; }
+          .pricing .single-pricebox .price-range-area-checkout .invest-count .right i {
+            color: #1f71d4;
+            margin-left: 4px; }
+      .pricing .single-pricebox .price-range-area-checkout .invest-range-slider {
+        margin: 2px 0px 7px; }
+      .pricing .single-pricebox .price-range-area-checkout .invest-get {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between; }
+        .pricing .single-pricebox .price-range-area-checkout .invest-get .left {
+          text-align: left; }
+
+ .pricing .single-pricebox .price-range-area-checkout .invest-get .left .payprice{
+    font-weight: 600;
+    display: block;
+    font-size: 30px;
+    line-height: 30px;
+    border: 1px solid rgba(31, 113, 212, 0.05);
+    border-radius: 0px;
+    height: 35px;
+    padding: 0px 0px 0px 20px;
+    display: inline-block;
+    //background: #1f71d420;
+
+ }
+
+
+
+
+
+          .pricing .single-pricebox .price-range-area-checkout .invest-get .left span {
+            font-weight: 600;
+            display: block;
+            font-size: 30px;
+            line-height: 30px;
+             }
+        .pricing .single-pricebox .price-range-area-checkout .invest-get .right {
+          text-align: right; }
+          .pricing .single-pricebox .price-range-area-checkout .invest-get .right span {
+            font-weight: 600;
+            display: block;
+            font-size: 30px;
+            line-height: 30px; }
+
+#errCard , #errCVC {
+  color: red;
+}
+
+/*-------------------------------
+Order Details End
+--------------------------------*/

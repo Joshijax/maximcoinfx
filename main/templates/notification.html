@@ -1,0 +1,174 @@
+{% extends 'base/base1.html' %}
+{% block content %}
+<div id="loader"></div>
+{% load static %}
+{% load djmoney %}
+<div class="wrapper">
+
+    {% include 'includes/_sidebar.html' %}
+    <!-- DEBUG-VIEW ENDED 2 APPPATH/Config/../Views/customer/sidebar.php -->
+    <!-- DEBUG-VIEW START 3 APPPATH/Config/../Views/customer/header.php -->
+    <!-- CONTENT -->
+    <div class="content-wrapper">
+        <div class="main-content">
+            <div class="page-loader-wrapper">
+                <div class="loader">
+                    <div class="preloaderr">
+                        <div class="spinner-layer pl-green">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Please wait...</p>
+                </div>
+            </div>
+            {% include 'includes/_sidebar1.html' %}
+            <!--/.navbar-->
+            <div class="content-header row align-items-center m-0">
+                <nav aria-label="breadcrumb" class="col-sm-4 order-sm-last mb-3 mb-sm-0 p-0 ">
+                    <ol class="breadcrumb d-inline-flex font-weight-600 fs-13 bg-white mb-0 float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Notification</a></li>
+                        <li class="breadcrumb-item active">Notification List </li>
+                    </ol>
+                </nav>
+                <div class="col-sm-8 header-title p-0">
+                    <div class="media">
+                        <div class="header-icon text-success mr-3"><i class="fa fa-pagelines"></i></div>
+                        <div class="media-body">
+                            <h6 class="font-weight-bold">Notification </h6>
+                            <small>Notification List</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="body-content">
+
+
+
+                <!-- DEBUG-VIEW ENDED 5 APPPATH/Config/../Views/customer/messages.php -->
+                <!-- DEBUG-VIEW START 6 APPPATH/Modules/Common/Views/Customer/email_sms/email_notification.php -->
+                
+
+                <div class="row">
+                    <div class="col-sm-12">
+                    {% for data in request.user.reply.all %}
+                        <div class="mailbox">
+                            <div class="mailbox-header">
+                                <div class="row">
+                                    <div class="col-xs-4 ">
+
+                                        <div class="inbox-avatar"><img
+                                                src="{% static 'public/uploads/dashboard/user.png' %}"
+                                                class="img-circle border-green" alt="">
+                                            <div class="inbox-avatar-text hidden-xs hidden-sm">
+                                                <div class="avatar-name">Admin</div>
+                                                <div><small class="small-mailbox">{{data.reply}}</small></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="mailbox-body">
+                                <div class="row m-0">
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12 inbox-mail">
+                                        <div class="mailbox-content">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 ">
+                                        <!-- DEBUG-VIEW START 1 SYSTEMPATH/Pager/Views/default_full.php -->
+
+                                        <nav aria-label="Page navigation"
+                                            class="dataTables_paginate paging_simple_numbers">
+                                            <ul class="pagination">
+
+
+                                            </ul>
+                                        </nav>
+
+                                        <!-- DEBUG-VIEW ENDED 1 SYSTEMPATH/Pager/Views/default_full.php -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="mailbox">
+                            <div class="mailbox-header">
+                                <div class="row">
+                                    <div class="col-xs-4 ">
+
+                                        <div class="inbox-avatar">
+                                            <div class="inbox-avatar-text hidden-xs hidden-sm">
+                                                <div class="avatar-name"></div>
+                                                <div><small class="small-mailbox">You have no Notification</small></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="mailbox-body">
+                                <div class="row m-0">
+
+                                    <div class="col-xs-12 col-sm-12 col-md-12 inbox-mail">
+                                        <div class="mailbox-content">
+                                        </div>
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 ">
+                                        <!-- DEBUG-VIEW START 1 SYSTEMPATH/Pager/Views/default_full.php -->
+
+                                        <nav aria-label="Page navigation"
+                                            class="dataTables_paginate paging_simple_numbers">
+                                            <ul class="pagination">
+
+
+                                            </ul>
+                                        </nav>
+
+                                        <!-- DEBUG-VIEW ENDED 1 SYSTEMPATH/Pager/Views/default_full.php -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                        
+                    </div>
+                </div>
+                <!-- DEBUG-VIEW ENDED 6 APPPATH/Modules/Common/Views/Customer/email_sms/email_notification.php -->
+                <!-- DEBUG-VIEW START 7 APPPATH/Config/../Views/customer/footer.php -->
+            </div>
+
+
+            
+
+
+
+
+            <footer class="footer-content">
+                <div class="footer-text d-flex align-items-center justify-content-between">
+                    <div class="copy">2021 © Copyright bdtask Treading System</div>
+                    <div class="credit">Designed by: <a href="#">Bdtask</a></div>
+                </div>
+            </footer>
+            <!--/.footer content-->
+            <div class="overlay"></div>
+
+
+
+
+            <!--Global script(used by all pages)-->
+            <!-- <script src="https://phpcryptomarket.bdtask.com/demo-v4.0/public/assets/plugins/jQuery/jquery.min.js"></script> -->
+
+        </div>
+    </div>
+
+    {% endblock %}

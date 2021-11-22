@@ -1,0 +1,13 @@
+<div class="single-currency-box">
+    <h4>Investment Request Taken</h4>
+    <h5>Follow the steps below to pay in {{mainMsg.name}}</h5>
+    <br>
+    <br>
+    {% if mainMsg %}
+        <p>{{ mainMsg.Message }}</p>
+    {% else %}
+   <p>{% with message|first as first_doc %}{{ first_doc.message }}{% endwith %}</p>
+    {% endif %}
+                 {% comment %} $('#messageplace').html(response); {% endcomment %}
+
+</div>

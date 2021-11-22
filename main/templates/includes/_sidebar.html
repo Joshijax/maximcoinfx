@@ -1,0 +1,168 @@
+{% load static %}
+<nav class="sidebar sidebar-bunker">
+        <div class="sidebar-header">
+            <a href="/" class="logo" style="color: white; font-weight: 600;"><img
+                    src="{% static 'assets/images/1563335660service-icon-1.png' %}"
+                    alt="" width="40"> Maximcoinfx</a>
+
+        </div>
+        <!--/.sidebar header-->
+        <div class="profile-element d-flex align-items-center flex-shrink-0">
+            <div class="avatar online">
+                <img src="{% static 'public/uploads/dashboard/user.png' %}"
+                    class="img-fluid rounded-circle" alt="">
+            </div>
+            <div class="profile-text">
+                <h6 class="m-0">{{request.user.first_name}} {{request.user.last_name}}</h6>
+                <span>{{request.user.email}}</span>
+            </div>
+        </div>
+        <!--/.profile element-->
+        <div class="sidebar-body ps ps--active-y">
+            <nav class="sidebar-nav">
+                <ul class="metismenu">
+
+
+                    <li {% if request.path == '/dashboard/' %}class="mm-active"{% endif %} >
+                        <a class="{% if request.path == '/dashboard/' %}mm-active{% endif %}  material-ripple"
+                            href="{% url 'main:dashboard' %}" aria-expanded="true">
+                            <i class="fa fa-home"></i> Dashboard </a>
+                    </li>
+                    <li {% if request.path == '/invest/' %}class="mm-active"{% endif %} >
+                        <a class="{% if request.path == '/invest/' %}mm-active{% endif %}  material-ripple"
+                            href="{% url 'main:invest' %}" aria-expanded="true">
+                            <i class="fa fa-gift"></i> Invest </a>
+                    </li>
+                    <li class="">
+                        <a class="material-ripple"
+                            href="#package" aria-expanded="true">
+                            <i class="fa fa-gift"></i> Package </a>
+                    </li>
+                    <li {% if request.path == '/Request-cash/' %}class="mm-active"{% endif %}>
+                        <a class="{% if request.path == '/Request-cash/' %}mm-active{% endif %}  material-ripple"
+                            href="{% url 'main:funds' %}" aria-expanded="true">
+                            <i class="fa fa-stack-exchange"></i>Withdraw Funds </a>
+                    </li>
+                    {% comment %} <li>
+                        <a class="has-arrow material-ripple " href="#">
+                            <i class="fa fa-key"></i> Account </a>
+                        <ul class="nav-second-level mm-collapse">
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/my_payout">
+                                    My Payout </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/my_commission">
+                                    My Commission </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/team_bonus">
+                                    Team Bonus </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/my_generation">
+                                    My Generation </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/mylevel_info">
+                                    My Level Info </a>
+                            </li>
+                        </ul>
+                    </li> {% endcomment %}
+                    {% comment %} <li>
+                        <a class="has-arrow material-ripple " href="#">
+                            <i class="fa fa-chart-pie"></i> Finance </a>
+                        <ul class="nav-second-level mm-collapse">
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/deposit/add_deposit">
+                                    Add Deposit </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/deposit/show_list">
+                                    Deposit List </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/withdraw/withdraw_money">
+                                    Withdraw </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/withdraw/withdraw_list">
+                                    Withdraw List </a>
+                            </li>
+                            <li class="">
+                                <a
+                                    href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/transfer/transfer_amount">
+                                    Transfer </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/transfer/transfer_list">
+                                    Transfer List </a>
+                            </li>
+                        </ul>
+                    </li> {% endcomment %}
+                    {% comment %} <li>
+                        <a class="has-arrow material-ripple " href="#">
+                            <i class="fa fa-gift"></i> Package </a>
+                        <ul class="nav-second-level mm-collapse">
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/package/package_list">
+                                    Package List </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/package/my_package">
+                                    My Package </a>
+                            </li>
+                        </ul>
+                    </li> {% endcomment %}
+
+                    {% comment %} <li class="">
+                        <a class=" material-ripple"
+                            href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/transection/transection_list">
+                            <i class="fa fa-exchange-alt"></i> Transaction </a>
+                    </li> {% endcomment %}
+
+                    <li {% if request.path == '/notification/' %}class="mm-active"{% endif %}>
+                        <a class="{% if request.path == '/notification/' %}class="mm-active"{% endif %} material-ripple"
+                            href="{% url 'main:noti' %}">
+                            <i class="fa fa-comment"></i> Notification </a>
+                    </li>
+                    {% comment %} <li>
+                        <a class="has-arrow material-ripple " href="#">
+                            <i class="fa fa-stack-exchange"></i> Exchange </a>
+                        <ul class="nav-second-level mm-collapse">
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/currency/currency_list">
+                                    Crypto Currency </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/buy/buy_form">
+                                    Buy </a>
+                            </li>
+                            <li class="">
+                                <a href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/sell/sell_form">
+                                    Sell </a>
+                            </li>
+                        </ul>
+                    </li> {% endcomment %}
+                    <li>
+                        <a class="has-arrow material-ripple " href="#">
+                            <i class="fa fa-cog"></i> Setting </a>
+                        <ul class="nav-second-level mm-collapse">
+                            <li class="">
+                                <a
+                                    href="/logout">
+                                    Logout </a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="ps__rail-x" style="left: 0px; top: 0px;">
+                <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+            </div>
+            <div class="ps__rail-y" style="top: 0px; height: 475px; right: 0px;">
+                <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 235px;"></div>
+            </div>
+        </div><!-- sidebar-body -->
+    </nav>

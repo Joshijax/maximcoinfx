@@ -1,0 +1,63 @@
+{% load static %}
+{% load google_translate %}
+ <section class="header-area-2">
+        <nav class="navbar navbar-expand-lg dashboard-menu">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="/" style="color: white; font-weight: 600;"><img src="{% static 'assets/images/logo.png' %}" class="d-inline-block align-top" alt="">worldcryptocoinx</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="menu-toggle"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav m-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/" role="button" >Home</a>
+                            
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main:about' %}">About us</a></li>
+                        {% comment %} <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li> {% endcomment %}
+                        {% comment %} <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="dashboard.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dashboard</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                                <li><a class="dropdown-item" href="exchange-currency.html">Exchange Currency</a></li>
+                                <li><a class="dropdown-item" href="money-transfer.html">Money Transfer</a></li>
+                                <li><a class="dropdown-item" href="request-money.html">Request Money</a></li>
+                                <li><a class="dropdown-item" href="transection-log.html">Transection Log</a></li>
+                                <li><a class="dropdown-item" href="invoice.html">Invoice</a></li>
+                                <li><a class="dropdown-item" href="vouchers.html">Vouchers</a></li>
+                                <li><a class="dropdown-item" href="support-ticket.html">Support Ticket</a></li>
+                            </ul>
+                        </li> {% endcomment %}
+                        {% comment %} <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                                <li><a class="dropdown-item" href="faq.html">FAQ page</a></li>
+                                <li><a class="dropdown-item" href="404.html">Error</a></li>
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                                <li><a class="dropdown-item" href="register.html">Signup</a></li>
+                                <li><a class="dropdown-item" href="refund.html">Refund</a></li>
+                                <li><a class="dropdown-item" href="privacy.html">Privacy</a></li>
+                                <li><a class="dropdown-item" href="tos.html">Terms and Services</a></li>
+                            </ul>
+                        </li> {% endcomment %}
+                        {% comment %} <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="blog.html" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Announcements</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="blog.html">Announcements</a></li>
+                                <li><a class="dropdown-item" href="blog-details.html">Announcement Details</a></li>
+                            </ul>
+                        </li> {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'main:contact' %}">Contact</a></li>
+                    </ul>
+                    {% google_translate type='simple' language='en' %}
+                    <div class="header-btn justify-content-end">
+                        <a href="{% url 'main:logout' %}" class="bttn-small btn-emt">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>

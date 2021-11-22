@@ -1,0 +1,155 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="preloader" id="preloader"
+    style="background: url({% static 'assets/images/1558779995loader.gif' %}) no-repeat scroll center center #FFF;">
+</div>
+
+
+<!--Top Header Area Start-->
+{% include 'includes/_navbars.html' %}
+<!--Main-Menu Area Ends-->
+
+
+
+<!-- Hero Area Start -->
+<section class="hero-area" style="background: url({% static 'assets/images/1563350277herobg.jpg' %});">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="content">
+                <h1 class="title"
+                        style="font-weight: 600; line-height: 60px; font-size: 50px; color: rgb(31, 113, 212);">Maximcoinfx</h1>
+                    <h4 class="subtitle"
+                        style="font-weight: 600; line-height: 1.2381; font-size: 24px; color: rgb(31, 113, 212);">More
+                        convenient than others</h4>
+                    <h2 class="title"
+                        style="font-weight: 600; line-height: 60px; font-size: 50px; color: rgb(23, 34, 44);">Find Value
+                        &amp; Build wealth</h2>
+                    <a href="https://www.google.com/" class="mybtn1 left"><span>Explore More
+                        </span></a>
+                    <a href="https://www.google.com/" class="mybtn1 right"><span>What We Do
+                        </span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Hero Area End -->
+
+<!-- Features Area Start-->
+{% include 'includes/_features.html' %}
+<!-- Features Area End-->
+
+<!-- About Area Start-->
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-img">
+                    <img src="{% static 'assets/images/1563350729about.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 d-flex align-self-center">
+                <div class="about-content">
+                    <div class="section-heading">
+                        <h5 class="sub-title">
+                            <h5 class="sub-title">A litter bit More&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</h5>
+                        </h5>
+                        <h2 class="title extra-padding">
+                            <h2 class="title extra-padding">About US&nbsp;</h2>
+                        </h2>
+                    </div>
+
+                    <div class="content">
+                        <p>Superior investment performance, we believe, is accomplished by a careful balance of three key
+                         characteristics: knowledge, experience, and adaptability. There is only one way to be at the forefront
+                          of innovative dedication. We strive to provide our clients with steady growth in investment performance
+                        as well as an improved value-add. We value our customers' loyalty and the ties we establish with them.
+                         Regardless of where you are from, our skilled managers will assist you in selecting the investment
+                          package that best meets your needs. Our managers are constantly working on implementing unique trading 
+                          methods with the most advanced and effective trading technology, competitive services, high-quality
+                           performance, genuine practices, excellent customer support service, and fund safety that enable us
+                            to work successfully and profitably on the market. </p>
+                        <p>
+                            We are able to keep a
+                         consistently high interest rate for our consumers since we have a variety of investing techniques.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                        <a href="#" class="mybtn1">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Features Area End-->
+
+
+
+<!-- Service Area Start -->
+{% include 'includes/_service.html' %}
+<!-- Service Area End -->
+
+
+
+<!-- Submit Address Area Start -->
+<div class="submit-address">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="submit-address-inner" style="background: url({% static 'assets/images/1566454842address-submit.jpg' %});">
+                    <h4 class="title">
+                        Enter your bitcoin address and make the first investment
+                    </h4>
+                    <div class="submit-form">
+                        <a href="contact.html" class="mybtn2">Contact Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Submit Address Area End -->
+
+
+
+<!-- Latest Transactions Area Start -->
+{% include 'includes/_stats.html' %}
+<!-- Latest Transactions Area End -->
+
+
+
+<!-- Testimonial Area Start -->
+{% include 'includes/_review.html' %}
+<!-- Testimonial Area End -->
+
+
+
+
+<!-- Pricing Area Starts -->
+{% include 'includes/_payments.html' %}
+<!-- Pricing Area Ends -->
+
+
+
+
+
+<!-- Blog Area Start -->
+{% comment %} {% include 'includes/_blog.html' %} {% endcomment %}
+<!-- Blog Area End -->
+
+
+
+
+<!-- Footer Area Start -->
+{% include 'includes/_footer.html' %}
+<!-- Footer Area End -->
+
+<!-- Back to Top Start -->
+<div class="bottomtotop">
+    <i class="fas fa-chevron-right"></i>
+</div>
+<!-- Back to Top End -->
+
+{% endblock %}

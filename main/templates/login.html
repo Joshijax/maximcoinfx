@@ -1,0 +1,157 @@
+{% extends 'base/base.html' %}
+{% block content %}
+{% load static %}
+{% include 'includes/_navbars.html' %}
+
+<div class="preloader" id="preloader"
+    style="background: url({% static 'assets/images/1558779995loader.gif' %}) no-repeat scroll center center #FFF;"></div>
+
+
+<!--Top Header Area Start-->
+{% include 'includes/_navbars.html' %}
+<!--Main-Menu Area Ends-->
+
+
+
+
+<!-- Breadcrumb Area Start -->
+<div class="breadcrumb-area" style="background: url(../assets/images/1563350864breadcrumb_bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="pagetitle">
+                    Login
+                </h1>
+
+                <ul class="pages">
+
+                    <li>
+                        <a href="../index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Breadcrumb Area End -->
+
+
+<section class="login-signup">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="log-reg-tab-wrapper">
+                    <div class="log-reg-tab-menu">
+                        <ul class="nav" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-signup-tab" data-toggle="pill" href="#pills-signup"
+                                    role="tab" aria-controls="pills-signup" aria-selected="true">Login</a>
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-signup" role="tabpanel"
+                            aria-labelledby="pills-signup-tab">
+
+                            <div class="login-area signup-area">
+                                <div class="login-form signup-form">
+                                    <form id="logForm" method="post">
+                                    {% if messages %}
+                                    {% for message in messages %}
+                                    <div {% if message.tags %}
+                                        class="alert alert-{{ message.tags }}  alert-dismissible  show" {% endif %}
+                                        role="alert">
+                                        {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                        {{ message }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    {% endfor %}
+
+                                    {% endif %}
+                                        <div class="alert alert-info validation" style="display: none;">
+                                            <p class="text-left">yes</p>
+                                        </div>
+                                        <div class="alert alert-success validation" style="display: none;">
+                                            <button type="button" class="close alert-close"><span>×</span></button>
+                                            <p class="text-left"></p>
+                                        </div>
+                                        <div class="col-xl-12" id='message11'>
+
+                                        </div>
+                                        <div class="alert alert-danger validation" style="display: none;">
+                                            <button type="button" class="close alert-close"><span>×</span></button>
+                                            <p class="text-left"></p>
+                                        </div> <input type="hidden" name="_token"
+                                            value="h25OjJmTT8tcT56WeZ4we6JOPNRr9PqUMd97m4rF">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input name="username" placeholder="username" type="text"
+                                                        autocomplete="off" required="">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="form-input">
+                                                    <input type="password" class="Password" name="password"
+                                                        placeholder="Type Password" required="">
+                                                    <i class="fas fa-key"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="{% url 'password_reset' %}" class="forgot-pass">Forgotten your password? </a>
+                                        <input id="authdata" type="hidden" value="Authenticating...">
+                                        <button type="submit" class="submit-btn" id="subLogin">Login</button>
+                                        <a href="{% url 'main:register' %}" class="forgot-pass">Don't have an account? Register</a>
+                                        <div class="social-area">
+                                            <h3 class="title">Or</h3>
+                                            <p class="text">Sign In with social media</p>
+                                            <ul class="social-links">
+                                                <li>
+                                                    <a
+                                                        href="https://www.facebook.com/v3.3/dialog/oauth?client_id=503140663460329&amp;redirect_uri=https%3A%2F%2Froyalscripts.com%2Fproduct%2Fcrypto%2Fauth%2Ffacebook%2Fcallback&amp;scope=email&amp;response_type=code&amp;state=LYHvEIgNA521xEtBpo8BB5niOsH1cBQa0a8Xb5NY">
+                                                        <i class="fab fa-facebook-f"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a
+                                                        href="https://accounts.google.com/o/oauth2/auth?client_id=904681031719-sh1aolu42k7l93ik0bkiddcboghbpcfi.apps.googleusercontent.com&amp;redirect_uri=https%3A%2F%2Froyalscripts.com%2Fproduct%2Fcrypto%2Fauth%2Fgoogle%2Fcallback&amp;scope=openid+profile+email&amp;response_type=code&amp;state=Vk5OVPXe4CVXVXUatS1EhLYrJWZR1OwTPQT3JThg">
+                                                        <i class="fab fa-google-plus-g"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include 'includes/_footer.html' %}
+{% include 'includes/_scripts.html' %}
+
+{% endblock %}

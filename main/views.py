@@ -188,8 +188,8 @@ def  Login(request):
 @is_logged_in
 @csrf_exempt
 def Register(request):
-    search_partno = request.GET.get('referral')
-    print(search_partno)
+    ref = request.GET.get('referral')
+    print(ref)
     if request.method == 'POST':
 
 
@@ -241,7 +241,7 @@ def Register(request):
         messages.add_message(request, messages.SUCCESS, 'Successfully created account, confirm email to login')
 
         return JsonResponse({'message':'Succesfully created your account', 'redirect': reverse('main:login'), 'message_type':'success'})
-    return render(request, 'register.html', {'media_url': settings.MEDIA_URL, 'media_root': settings.MEDIA_ROOT, 'ref': sea,})
+    return render(request, 'register.html', {'media_url': settings.MEDIA_URL, 'media_root': settings.MEDIA_ROOT, 'ref': ref,})
 
 @login_required(login_url='/Login')
 def  Dashboard(request):

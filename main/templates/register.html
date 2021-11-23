@@ -124,12 +124,13 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-input">
-                                                    <input type="tel" id="regphone" class="User Name" name="phone"
+                                                    <input type="tel" id="regphone" name="phone"
                                                         placeholder="Phone Number" required="">
                                                     <i class="fas fa-phone"></i>
 
                                                 </div>
                                                 <div style="" id="CheckPhoneMatch1"></div>
+                                                <div class="alert alert-info" style="display: none;"></div>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -154,13 +155,13 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-input">
-                                                    <input type="password" class="Password pr-password"  name="password"
+                                                    <input type="password" class="Password pr-password" name="password"
                                                         placeholder="Password" required="" id="regpass">
                                                     <i class="fas fa-key"></i>
                                                 </div>
                                                 <div style="margin-top: 7px; margin-left: 22px;"
                                                     id="CheckPasswordMatch1"></div>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="row">
@@ -174,11 +175,24 @@
                                                     id="CheckPasswordMatch"></div>
 
                                             </div>
+                                            <div class="col-sm-12">
+                                                <div class="input">
+                                                    <label>
+                                                        <input type="checkbox" id="checkbox" name="accept_terms"
+                                                            value="ptConfirm">
+                                                    </label>
+                                                    Your Password at Maximcoinfx are encrypted and you agree to our terms and condition <a
+                                                        target="_blank" href="" class="checkbox-link">here</a>
+                                                    <a target="_blank" href="#" class="checkbox-link"></a>
+                                                </div>
+                                            <span id='checker'></span>
+                                            </div>
                                         </div>
 
                                         <button id="regbtn" type="submit" class="submit-btn">Register</button>
                                         <br>
-                                        <a href="{% url 'main:login' %}" class="forgot-pass">Alreeady have an account? Login</a>
+                                        <a href="{% url 'main:login' %}" class="forgot-pass">Alreeady have an account?
+                                            Login</a>
 
                                     </form>
                                 </div>

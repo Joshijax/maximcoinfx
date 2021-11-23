@@ -1,227 +1,263 @@
 {% load static %}
-	<script src="{% static 'assets/front/js/jquery.js' %}"></script>
+<script src="{% static 'assets/front/js/jquery.js' %}"></script>
 
 <script src="{% static 'js/jquery.passwordRequirements.min.js' %}"></script>
 
 <script>
-$('#regForm').submit(function(e) {
-  e.preventDefault();
-  // get all the inputs into an array.
-  let searchParams = new URLSearchParams(window.location.search)
-  let param = searchParams.get('referral')
-  console.log(param)
-  var password = $("#regpass").val();
-  var phone = $("#regphone").val();
-  var paswd=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-  var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-var confirmPassword = $("#regpass1").val();
+  $('#regForm').submit(function (e) {
+    e.preventDefault();
+    // get all the inputs into an array.
+    let searchParams = new URLSearchParams(window.location.search)
+    let param = searchParams.get('referral')
+    console.log(param)
+    var password = $("#regpass").val();
+    var phone = $("#regphone").val();
+    var paswd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+    var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    var confirmPassword = $("#regpass1").val();
 
-if(password.match(paswd)) { 
-          $("#CheckPasswordMatch1").html("Password valid !").css("color", "green");
-       
-    }else{ 
-          $("#CheckPasswordMatch1").html("Not valid").css("color", "red");
-        return false;
+    if($('#checkbox').is(":checked")){
+      $("#checker").html("").css("color", "green");
+    }else{
+      $("#checker").html("please check the agreement").css("color", "red");
+       return false;
     }
-if (password != confirmPassword){
-    $("#CheckPasswordMatch").html("Password does not match !").css("color", "red");
-    return false;}
-else{
-    $("#CheckPasswordMatch").html("Password match !").css("color", "green");}
-  
-  
 
-    
+    if (password.match(paswd)) {
+      $("#CheckPasswordMatch1").html("Password valid !").css("color", "green");
 
-    if(phone.match(re)) { 
-          $("#CheckPhoneMatch1").html("").css("color", "green");
-       
-    }else{ 
-          $("#CheckPhoneMatch1").html("Not valid phone number").css("color", "red");
-        return false;
+    } else {
+      $("#CheckPasswordMatch1").html("Not valid").css("color", "red");
+      return false;
     }
-  
-  var $inputs = $('#regForm :input');
+    if (password != confirmPassword) {
+      $("#CheckPasswordMatch").html("Password does not match !").css("color", "red");
+      return false;
+    }
+    else {
+      $("#CheckPasswordMatch").html("Password match !").css("color", "green");
+    }
 
-  // not sure if you wanted this, but I thought I'd add it.
-  // get an associative array of just the values.
-  var values = {};
-  $inputs.each(function() {
+
+
+
+
+    if (phone.match(re)) {
+      $("#CheckPhoneMatch1").html("").css("color", "green");
+
+    } else {
+      $("#CheckPhoneMatch1").html("Not valid phone number").css("color", "red");
+      return false;
+    }
+
+    var $inputs = $('#regForm :input');
+
+    // not sure if you wanted this, but I thought I'd add it.
+    // get an associative array of just the values.
+    var values = {};
+    $inputs.each(function () {
       values[this.name] = $(this).val();
       console.log(values[this.name])
-  });
-  console.log(values)
-  $('#regbtn').html('Please wait...');
-  $('#regbtn').prop('disabled', true);
-  
-  $.ajax({
-    type: "post",
-    url: "{% url 'main:register' %}",
-    data: values,
-    success: function (response) {
+    });
+    console.log(values)
+    $('#regbtn').html('Please wait...');
+    $('#regbtn').prop('disabled', true);
+
+    $.ajax({
+      type: "post",
+      url: "{% url 'main:register' %}",
+      data: values,
+      success: function (response) {
         $('#regbtn').html('Create account');
         $('#regbtn').prop('disabled', false);
         $('#message').html(`<div class="alert alert-${response.message_type} alert-dismissible fade show" role="alert">${response.message}<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button></div>`);
-        
+
         {% comment %} $.scrollTo($('#message'), 1000); {% endcomment %}
-        if(response.message_type){
-            alert(response.message)
+        if (response.message_type) {
+          alert(response.message)
         }
-        
-        if(response.redirect){
-            window.location = response.redirect
+
+        if (response.redirect) {
+          window.location = response.redirect
         }
-        
-    },
-    error: function (data) {
+
+      },
+      error: function (data) {
 
         $('#regbtn').html('Create account');
         $('#regbtn').prop('disabled', false);
         $('#message').html(`<div class="alert alert-danger alert-dismissible  show" role="alert">Something went wrong try again...<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button></div>`);
-    },
+      },
+    });
+
   });
 
-});
 
+  $('#logForm').submit(function (e) {
+    e.preventDefault();
+    // get all the inputs into an array.
+    var $inputs = $('#logForm :input');
 
-$('#logForm').submit(function(e) {
-  e.preventDefault();
-  // get all the inputs into an array.
-  var $inputs = $('#logForm :input');
-
-  // not sure if you wanted this, but I thought I'd add it.
-  // get an associative array of just the values.
-  var values = {};
-  $inputs.each(function() {
+    // not sure if you wanted this, but I thought I'd add it.
+    // get an associative array of just the values.
+    var values = {};
+    $inputs.each(function () {
       values[this.name] = $(this).val();
       console.log(values[this.name])
-  });
-  console.log(values)
-  $('#subLogin').html('Please wait...');
-  $('#subLogin').prop('disabled', true);
-  
+    });
+    console.log(values)
+    $('#subLogin').html('Please wait...');
+    $('#subLogin').prop('disabled', true);
 
-  $.ajax({
-    type: "post",
-    url: "{% url 'main:login' %}",
-    data: values,
-    success: function (response) {
+
+    $.ajax({
+      type: "post",
+      url: "{% url 'main:login' %}",
+      data: values,
+      success: function (response) {
         $('#subLogin').html('Login now');
         $('#subLogin').prop('disabled', false);
         $('#message11').html(`<div class="alert alert-${response.message_type} alert-dismissible show" role="alert">${response.message}<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button></div>`);
-        
+
         console.log(response)
-        
-        if(response.redirect){
-            window.location = response.redirect
+
+        if (response.redirect) {
+          window.location = response.redirect
         }
-    },
-    error: function (data) {
+      },
+      error: function (data) {
 
         $('#subLogin').html('LOGIN NOW');
         $('#subLogin').prop('disabled', false);
         $('#message').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">Something went wrong try again...<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button></div>`);
-    },
+      },
+    });
+
   });
 
-});
-
-$(function(){
-  $(".pr-password").passwordRequirements();
-});
-$(".pr-password").passwordRequirements({
-  numCharacters: 7,
-  useLowercase: true,
-  useUppercase: true,
-  useNumbers: true,
-  useSpecial: false,
-});
-$(".pr-password").passwordRequirements({
-  fadeTime: 500
-});
+  $(function () {
+    $(".pr-password").passwordRequirements();
+  });
+  $(".pr-password").passwordRequirements({
+    numCharacters: 7,
+    useLowercase: true,
+    useUppercase: true,
+    useNumbers: true,
+    useSpecial: false,
+  });
+  $(".pr-password").passwordRequirements({
+    fadeTime: 500
+  });
 
 
-$(document).ready(function() {
-      $("#regpass1").on('keyup', function() {
-        var password = $("#regpass").val();
-        var confirmPassword = $("#regpass1").val();
-        if (password != confirmPassword)
-          $("#CheckPasswordMatch").html("Password does not match !").css("color", "red");
-        else
-          $("#CheckPasswordMatch").html("Password match !").css("color", "green");
-      });
+  $(document).ready(function () {
+    $("#regpass1").on('keyup', function () {
+      var password = $("#regpass").val();
+      var confirmPassword = $("#regpass1").val();
+      if (password != confirmPassword)
+        $("#CheckPasswordMatch").html("Password does not match !").css("color", "red");
+      else
+        $("#CheckPasswordMatch").html("Password match !").css("color", "green");
+    });
 
-      $("#regpass").on('keyup', function() {
-          var paswd=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-        var password = $("#regpass").val();
-       
-        if (!password.match(paswd))
-          $("#CheckPasswordMatch1").html("Not valid").css("color", "red");
-        else
-          $("#CheckPasswordMatch1").html("Password valid !").css("color", "green");
-      });
+    $("#regpass").on('keyup', function () {
+      var paswd = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+      var password = $("#regpass").val();
+
+      if (!password.match(paswd))
+        $("#CheckPasswordMatch1").html("Not valid").css("color", "red");
+      else
+        $("#CheckPasswordMatch1").html("Password valid !").css("color", "green");
     });
 
 
 
+    $("#regphone").on('keyup', function () {
+      const info = document.querySelector(".alert-info");
+      var phone = $("#regphone").val();
+      console.log(phone)
+
+      var re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+      const phoneNumber = phoneInput.getNumber();
+
+      if (phone.match(re)) {
+        $("#CheckPhoneMatch1").html(`Phone number in E.164 format: <strong>${phoneNumber}</strong>`).css("color", "green");
+
+      } else {
+        $("#CheckPhoneMatch1").html("Not valid phone number").css("color", "red");
+        
+      }
+
+      
+
+
+      
+
+    });
+
+
+  });
 
 
 
 
-    $('#conform').submit(function(e) {
-  e.preventDefault();
-  // get all the inputs into an array.
-  
-  
-  var $inputs = $('#conform :input');
 
-  // not sure if you wanted this, but I thought I'd add it.
-  // get an associative array of just the values.
-  var values = {};
-  $inputs.each(function() {
+
+
+  $('#conform').submit(function (e) {
+    e.preventDefault();
+    // get all the inputs into an array.
+
+
+    var $inputs = $('#conform :input');
+
+    // not sure if you wanted this, but I thought I'd add it.
+    // get an associative array of just the values.
+    var values = {};
+    $inputs.each(function () {
       values[this.name] = $(this).val();
       console.log(values[this.name])
-  });
-  console.log(values)
-  $('#conbtn').html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
-  $('#conbtn').prop('disabled', true);
-  
-  $.ajax({
-    type: "post",
-    url: "{% url 'main:contacter' %}",
-    data: values,
-    success: function (response) {
+    });
+    console.log(values)
+    $('#conbtn').html('<div class="spinner-border" role="status"><span class="sr-only">Loading...</span></div>');
+    $('#conbtn').prop('disabled', true);
+
+    $.ajax({
+      type: "post",
+      url: "{% url 'main:contacter' %}",
+      data: values,
+      success: function (response) {
         $('#conbtn').html('SEND MESSAGE');
         $('#conbtn').prop('disabled', false);
         $('#message').html(`<div class="alert alert-${response.message_type} alert-dismissible fade show" role="alert">${response.message}<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button></div>`);
-        
+
         {% comment %} $.scrollTo($('#message'), 1000); {% endcomment %}
         console.log(response)
-        
-            window.location.reload()
-        
-        
-    },
-    error: function (data) {
+
+        window.location.reload()
+
+
+      },
+      error: function (data) {
 
         $('#conbtn').html('SEND MESSAGE');
         $('#conbtn').prop('disabled', false);
         $('#message').html(`<div class="alert alert-danger alert-dismissible fade show" role="alert">Something went wrong try again...<button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button></div>`);
-    },
-  });
+      },
+    });
 
-});
+  });
 
 </script>

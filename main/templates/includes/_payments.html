@@ -14,8 +14,7 @@
                         Choose Plans &amp; Pricing
                     </h2>
                     <p class="text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.
+                        Choose a plan of your choosing...
                     </p>
                 </div>
             </div>
@@ -23,16 +22,16 @@
         <div class="row">
 
 
-
-            <div class="col-lg-4 col-md-6">
+            {% for plan in invest %}
+            <div class="col-lg-3 col-md-6">
                 <div class="single-pricebox">
                     <p class="plan-title">
-                        Plan 1
+                        {{plan.name}}
                     </p>
                     <div class="bonus">
                         <i class="fas fa-dollar-sign"></i>
-                        <p class="persent">400%</p>
-                        <p class="time">Payout 30 day(s) </p>
+                        <p class="persent">{{plan.percentr}}%</p>
+                        <p class="time">Payout {{plan.return_date}} day(s) </p>
                     </div>
                     <div class="price-range-area">
                         <div class="invest-count">
@@ -40,43 +39,42 @@
                                 Minimum Invest:
                             </div>
                             <div class="right">
-                                50$<i class="fab fa-bitcoin"></i>
+                                {{plan.amount.amount}}$<i class="fab fa-bitcoin"></i>
                             </div>
                         </div>
                         <div class="invest-range-slider">
                             <div class="range-slider">
-                                <input class="range-slider__range" type="range" value="50" min="50" max="5000"
+                                <input class="range-slider__range" type="range" value="{{plan.amount.amount}}" min="{{plan.amount.amount}}" max="{{plan.amountto.amount}}"
                                     style="background: linear-gradient(90deg, rgb(31, 113, 212) 26.4%, rgba(31, 113, 212, 0.125) 26.5%);">
                             </div>
                         </div>
                         <div class="invest-get">
                             <div class="left">
                                 Invest: <br>
-                                <input type="hidden" value="50" class="invest-min-price" />
-                                <input type="hidden" value="5000" class="invest-max-price" />
-                                <input type="number" min="50" max="5000" class="payprice" value="50">
-                                <span style="display:none;" class="range-slider__value ck">50</span>
+                                <input type="hidden" value="{{plan.amount.amount}}" class="invest-min-price" />
+                                <input type="hidden" value="{{plan.amountto.amount}}" class="invest-max-price" />
+                                <input type="number" min="{{plan.amount.amount}}" max="{{plan.amountto.amount}}" class="payprice" value="{{plan.amount.amount}}">
+                                <span style="display:none;" class="range-slider__value ck">{{plan.amount.amount}}</span>
                             </div>
-                            <input type="hidden" class="dbl" value="4">
+                            <input type="hidden" class="dbl" value="{{plan.percent}}">
                             <div class="right">
-                                Get: <span class="dk">200</span>
-                                <input type="hidden" class="prodid" value="67">
-                                <input type="hidden" class="getprice" value="200">
+                                Get: <span class="dk"></span>
+                                <input type="hidden" class="prodid" value="">
+                                <input type="hidden" class="getprice" value="">
                             </div>
                         </div>
                     </div>
                     <div class="invest-button">
 
-                        <a href="#" data-checkoutRoute="https://royalscripts.com/product/crypto/order/67"
-                            data-url="https://royalscripts.com/product/crypto/crypto/setdata"
-                            data-href="https://royalscripts.com/product/crypto/order/67"
-                            class="mybtn1 checkout-btn">INVEST NOW </a>
+                        <a href="{% url 'main:invest' %}" 
+                            class="mybtn1 ">INVEST NOW </a>
                     </div>
                 </div>
             </div>
+            {% endfor %}
 
 
-            <div class="col-lg-4 col-md-6">
+            {% comment %} <div class="col-lg-3 col-md-6">
                 <div class="single-pricebox">
                     <p class="plan-title">
                         Plan 2
@@ -128,7 +126,7 @@
             </div>
 
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="single-pricebox">
                     <p class="plan-title">
                         Plan 3
@@ -180,7 +178,7 @@
             </div>
 
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="single-pricebox">
                     <p class="plan-title">
                         Plan 4
@@ -232,7 +230,7 @@
             </div>
 
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="single-pricebox">
                     <p class="plan-title">
                         Plan 5
@@ -284,7 +282,7 @@
             </div>
 
 
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <div class="single-pricebox">
                     <p class="plan-title">
                         Plan 6
@@ -333,7 +331,7 @@
                             class="mybtn1 checkout-btn">INVEST NOW </a>
                     </div>
                 </div>
-            </div>
+            </div> {% endcomment %}
 
 
         </div>

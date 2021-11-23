@@ -1,15 +1,16 @@
 from django.contrib import admin
 
-from main.models import Invest, Message, Payment_Method, Replys, UserType
+from main.models import Invest, Invest_plan, Message, Payment_Method, Referral, Replys, UserType
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
 # Register your models here.
-admin.site.register(Invest)
+admin.site.register(Invest_plan)
 admin.site.register(UserType)
 admin.site.register(Message)
 admin.site.register(Replys)
 admin.site.register(Payment_Method)
+admin.site.register(Referral)
 
 class ProfileInline(admin.StackedInline):
     model = UserType
@@ -22,6 +23,12 @@ class ReplyInline(admin.StackedInline):
     can_delete = True
     verbose_name_plural = 'reply'
     fk_name = 'rep'
+
+class ReferralInline(admin.StackedInline):
+    model = Referral
+    can_delete = True
+    verbose_name_plural = 'ref'
+    fk_name = 'ref'
 
 class CustomUserAdmin(UserAdmin):
     inlines = (ProfileInline, ReplyInline)

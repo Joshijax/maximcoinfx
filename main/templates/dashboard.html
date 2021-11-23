@@ -3,6 +3,7 @@
 <div id="loader"></div>
 {% load static %}
 {% load djmoney %}
+{% load mathfilters %}
 <div class="wrapper">
 
     {% include 'includes/_sidebar.html' %}
@@ -38,25 +39,6 @@
                 <!-- DEBUG-VIEW ENDED 4 APPPATH/Config/../Views/customer/messages.php -->
                 <!-- DEBUG-VIEW START 5 APPPATH/Modules/Auth/Views/Customer/dashboard.php -->
 
-                
-                <br>
-
-                {% comment %} <div class="social_share">
-                    <ul>
-                        <li class="whatsapp"><a
-                                href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/my_payout"> <span>My
-                                    Payout $46,242,009.21</span></a></li>
-                        <li class="facebook"><a
-                                href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/my_commission">
-                                <span>Commission $43,020,240.00</span></a></li>
-                        <li class="twitter"><a
-                                href="https://phpcryptomarket.bdtask.com/demo-v4.0/customer/account/team_bonus">
-                                <span>Bonus $5,006,000.00</span></a></li>
-                    </ul>
-                </div> {% endcomment %}
-
-
-                <!-- /.Social share -->
                 <div class="row">
                     <div class="col-xl-12 col-12" style="margin-bottom: 22px;">
 
@@ -66,6 +48,27 @@
                                 frameborder="0" border="0" style="border:0;margin:0;padding:0;"></iframe></div>
 
                     </div>
+                </div>
+                <br>
+
+                <div class="social_share">
+                    <ul>
+                        <li class="whatsapp"><a
+                                href="javascript:void(0)"> <span>My Referral
+                                     {{request.user.ref.all|length}}</span></a></li>
+                        <li class="facebook"><a
+                                href="javascript:void(0)">
+                                <span>Commission {{request.user.profile.commision}} USD</span></a></li>
+                        <li class="twitter"><a
+                                href="javascript:void(0)">
+                                <span>Bonus {{request.user.profile.bonus}} USD</span></a></li>
+                    </ul>
+                </div>
+
+
+                <!-- /.Social share -->
+                <div class="row">
+                    
 
                     {% comment %} <div class="col-sm-6 col-md-3">
                         <div class="count_panel">
@@ -107,7 +110,7 @@
                     <div id="balance" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 dashboard-content">
                         <div class="single-currency-box" style="background: #009E60;">
                             <h4>My Balance</h4>
-                            <p>{{request.user.profile.balance}} USD </p>
+                            <p>${{request.user.profile.balance.amount | addition:request.user.profile.commision.amount | addition:request.user.profile.bonus.amount}} USD </p>
                         </div>
                     </div>
                     <div id="balance" class="col-xl-6 col-lg-6 col-md-6 col-sm-6 dashboard-content">

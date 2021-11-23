@@ -1,6 +1,8 @@
 asgiref==3.4.1
 Babel==2.9.1
 Django==3.2.8
+django-google-translate==1.1
+django-mathfilters==1.0.0
 django-money==2.1
 gunicorn==20.1.0
 mysqlclient==2.0.3

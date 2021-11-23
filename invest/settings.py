@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'google_translate',
     'main',
     'djmoney',
+    'mathfilters',
     
 ]
     

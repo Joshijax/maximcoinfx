@@ -24,7 +24,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 
-from main.models import Invest, Message, Payment_Method
+from main.models import Invest, Invest_plan, Message, Payment_Method, Referral
 from .token_generator import account_activation_token
 # from PIL import Image
 from functools import wraps
@@ -148,7 +148,8 @@ def ContactUs(request):
 
 
 def  Home(request):
-    return render(request, 'home.html', {'media_url': settings.MEDIA_URL, 'media_root': settings.MEDIA_ROOT,})
+    invest = Invest_plan.objects.all()
+    return render(request, 'home.html', {'media_url': settings.MEDIA_URL, 'invest': invest,})
 
 @is_logged_in
 @csrf_exempt
@@ -200,7 +201,11 @@ def Register(request):
         password1 = request.POST.get('password', None)
         password2 = request.POST.get('password2', None)
         phone = request.POST.get('phone', None)
-        print(firstname, lastname, username, emaill, password1, password2, phone)
+        ref = request.POST.get('ref', None)
+        print(firstname, lastname, username, emaill, password1, password2, phone, ref)
+
+        
+        
         if User.objects.filter(username=username).exists():
             print('1 vv')
             return JsonResponse({'message':'username already exists', 'message_type':'danger'})
@@ -238,6 +243,13 @@ def Register(request):
         profile = user.profile # because of signal and one2one relation
         profile.phone = phone
         profile.save()
+
+        if User.objects.filter(username=ref).exists():
+            Ruser =  User.objects.get(username=ref)
+            Referral.objects.create(
+                ref = Ruser,
+                ref_user = user
+            )
         messages.add_message(request, messages.SUCCESS, 'Successfully created account, confirm email to login')
 
         return JsonResponse({'message':'Succesfully created your account', 'redirect': reverse('main:login'), 'message_type':'success'})
@@ -259,7 +271,7 @@ def  contact(request):
 
 @login_required(login_url='/Login')
 def  Investments(request):
-    invest = Invest.objects.all()
+    invest = Invest_plan.objects.all()
     pay = Payment_Method.objects.all()
     return render(request, 'invest.html', {'media_url': settings.MEDIA_URL, 'invest': invest, 'pay': pay,})
 

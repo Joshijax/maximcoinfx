@@ -2,31 +2,43 @@
 {% block content %}
   {% load static %}
   
-        <div id="loader-wrapper">
-        <div id="loader"></div>
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-    <!-- /.End of loader wrapper-->
-    {% include 'includes/_navbars.html' %}
-<!-- DEBUG-VIEW ENDED 2 APPPATH/Config/../Views/themes/website_template/header.php -->
-<!-- DEBUG-VIEW START 3 APPPATH/Config/../Views/themes/website_template/layout.php -->
-<!-- DEBUG-VIEW START 1 APPPATH/Config/../Views/themes/website_template/about.php -->
-        <div class="page_header" data-parallax-bg-image="{% static 'public/uploads/b40e7e093d856ff3c5037421efade783.jpg' %}" data-parallax-direction="">
-            <div class="header-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-8 col-sm-offset-2">
-                            <div class="haeder-text">
-                                <h1>About Us</h1>
-                                <p>This is Globefxtrade</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  {% comment %} <link rel="stylesheet" href="{% static 'main.css' %}"> {% endcomment %}
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+ 	<div class="preloader" id="preloader" style="background: url({% static 'assets/images/1558779995loader.gif' %}) no-repeat scroll center center #FFF;"></div>
 
+
+	<!--Top Header Area Start-->
+{% include 'includes/_navbars.html' %}
+	<!--Main-Menu Area Ends-->
+
+     <!-- Breadcrumb Area Start -->
+  <div class="breadcrumb-area" style="background: url({% static 'assets/images/1563350864breadcrumb_bg.jpg' %});">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="pagetitle">
+            About Us
+          </h1>
+
+          <ul class="pages">
+                
+              <li>
+                <a href="/">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  About Us
+                </a>
+              </li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Breadcrumb Area End -->
          <!--About Section-->
     <section class="about-area gradient-overlay">
         <div class="about-content mid-bg-gray wow fadeInUp" data-wow-delay="0.4s">
@@ -137,40 +149,7 @@
                                     <p class="member__description">Manager</p>
                                 </div>
                             </div>
-                            <!-- /.End of team -->
-                            {% comment %} <div class="col-sm-4 team">
-                                <h2 class="team__number">04</h2>
-                                <div class="team__member">
-                                    <a href="#" class="team__member__img" style="background-image: url({% static 'public/uploads/team/7d8e1493739a58c0256235cd81d63599.png' %})"></a>
-                                </div>
-                                <div class="member__detail">
-                                    <a href="#" class="member__title"><h4>John Deo</h4></a>
-                                    <p class="member__description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                                </div>
-                            </div>
-                            <!-- /.End of team -->
-                            <div class="col-sm-4 team">
-                                <h2 class="team__number">05</h2>
-                                <div class="team__member">
-                                    <a href="#" class="team__member__img" style="background-image: url({% static 'public/uploads/team/773a12ed7d00d667df1fb24b659f8c14.png' %})"></a>
-                                </div>
-                                <div class="member__detail">
-                                    <a href="#" class="member__title"><h4>John Deo</h4></a>
-                                    <p class="member__description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                                </div>
-                            </div>
-                            <!-- /.End of team -->
-                            <div class="col-sm-4 team">
-                                <h2 class="team__number">06</h2>
-                                <div class="team__member">
-                                    <a href="#" class="team__member__img" style="background-image: url({% static 'public/uploads/team/3aedc488370c0b5eaa3e65c4fab5c52d.png' %})"></a>
-                                </div>
-                                <div class="member__detail">
-                                    <a href="#" class="member__title"><h4>John Deo</h4></a>
-                                    <p class="member__description">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                                </div>
-                            </div> {% endcomment %}
-                            <!-- /.End of team -->
+                            
 
                         </div>
                     </div>
@@ -180,12 +159,6 @@
         <!-- /.End of team content -->
         {% include 'includes/_partners.html' %}
         <!-- /.End of testimonial content -->
-<!-- DEBUG-VIEW ENDED 1 APPPATH/Config/../Views/themes/website_template/about.php -->
-
-<!-- DEBUG-VIEW ENDED 3 APPPATH/Config/../Views/themes/website_template/layout.php -->
-<!-- DEBUG-VIEW START 4 APPPATH/Config/../Views/themes/website_template/footer.php -->
-
-
 
     {% include 'includes/_footer.html' %}
    

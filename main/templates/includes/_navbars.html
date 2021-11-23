@@ -71,13 +71,14 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="index.html">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="blog.html">Blog</a>
-                            </li>
-                            <li class="nav-item">
+                            
+                            {% comment %} <li class="nav-item">
                                 <a class="nav-link" href="faq.html">FAQ</a>
+                            </li> {% endcomment %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:about' %}">About Us</a>
                             </li>
-                            <li class="nav-item dropdown">
+                            {% comment %} <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     Pages
@@ -85,16 +86,20 @@
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="privacy.html"> <i
                                                 class="fa fa-angle-double-right"></i>Privacy &amp; Policy</a></li>
-                                    <li><a class="dropdown-item" href="about.html"> <i
+                                    <li><a class="dropdown-item" href="{% url 'main:about' %}"> <i
                                                 class="fa fa-angle-double-right"></i>About Us</a></li>
                                 </ul>
-                            </li>
+                            </li> {% endcomment %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'main:contact' %}">Contact Us</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'main:login' %}">Login</a>
+                            </li>
                         </ul>
 
-                        <a href="{% url 'main:login' %}" class="mybtn1 ml-4">Login / Register</a>
+
+                        <a href="{% url 'main:register' %}" class="mybtn1 ml-4">Get Started</a>
 
                     </div>
                 </nav>

@@ -257,7 +257,7 @@ def Register(request):
 
 @login_required(login_url='/Login')
 def  Dashboard(request):
-    invest = Invest.objects.all()
+    invest = Invest_plan.objects.all()
     user= request.user
     print(User._meta.get_fields(), user.profile.phone)
     return render(request, 'dashboard.html', {'media_url': settings.MEDIA_URL, 'invest': invest,})

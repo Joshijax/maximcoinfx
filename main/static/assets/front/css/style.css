@@ -688,7 +688,7 @@ ul {
   .mainmenu-area.nav-fixed {
     -webkit-box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
-    background: #fff; }
+    background: #1f71d4; }
     .mainmenu-area.nav-fixed .top-header {
       display: none; }
 
@@ -2506,7 +2506,7 @@ Pricing Area Start
     height: 35px;
     padding: 0px 0px 0px 20px;
     display: inline-block;
-    //background: #1f71d420;
+    background: #1f71d420;
 
  }
 
